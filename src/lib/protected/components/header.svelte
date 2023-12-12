@@ -3,10 +3,10 @@
     import { page, navigating } from "$app/stores";
     import { onMount } from "svelte";
 
-    $: isHome = $page.url.pathname === "/app";
+    $: isHome = $page.url.pathname === "/home";
     let isMounted: boolean = false;
     let pageName: string = $page.url.pathname;
-    let headerContainer: HTMLDivElement;
+    let headerContainer: HTMLElement;
 
     function getPageName() {
         if (!isMounted) return;
@@ -29,7 +29,7 @@
     });
 </script>
 
-<header class="w-full mb-6 flex {isHome ? 'justify-between' : 'justify-center'} items-center relative" bind:this={headerContainer}>
+<header class="w-full py-6 lg:px-12 flex {isHome ? 'justify-between' : 'justify-start'} items-center relative" bind:this={headerContainer}>
     {#if isHome}
         <div class="text-left">
             <p class="text-lg font-semibold">Quado</p>
@@ -39,7 +39,7 @@
         <img class="aspect-square h-9 rounded-full border border-backgroundSecondary" src={$page.data.session?.user?.image} alt={$page.data.session?.user?.name} />
     {:else}
         <button
-            class="aspect-square w-5 absolute left-0 top-1/2 -translate-y-1/2"
+            class="aspect-square w-5"
             on:click={() => {
                 history.back();
             }}
@@ -47,6 +47,6 @@
             <ArrowLeft classes="w-full h-full stroke-white" />
         </button>
 
-        <p class="text-lg text-primary font-semibold">{pageName}</p>
+        <p class="text-lg text-primary font-semibold absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">{pageName}</p>
     {/if}
 </header>

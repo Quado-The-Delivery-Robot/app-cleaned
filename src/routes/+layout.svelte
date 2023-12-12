@@ -9,7 +9,7 @@
 
 <slot />
 
-<Background></Background>
+<Background />
 
 <style lang="postcss">
     :global(body) {
