@@ -1,5 +1,4 @@
 <script lang="ts">
-    import Background from "$lib/core/components/background.svelte";
     import "$lib/core/tailwind.css";
 </script>
 
@@ -9,10 +8,8 @@
 
 <slot />
 
-<Background></Background>
-
 <style lang="postcss">
     :global(body) {
-        @apply w-full h-screen;
+        @apply w-full h-screen text-center;
     }
 </style>

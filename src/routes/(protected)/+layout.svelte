@@ -1,5 +1,6 @@
 <script lang="ts">
-    import anime from "animejs";
+    import Background from "$lib/protected/components/background.svelte";
 </script>
 
+<Background></Background>
 <slot />
