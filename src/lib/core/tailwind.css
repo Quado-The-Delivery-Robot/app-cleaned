@@ -242,3 +242,17 @@
         @apply outline-none;
     }
 }
+
+@layer components {
+    .onlyGlass {
+        @apply bg-background bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-40 border-background-800;
+    }
+
+    .onlyGlassSecondary {
+        @apply onlyGlass bg-backgroundSecondary-950 bg-opacity-70
+    }
+
+    .glass {
+        @apply onlyGlass rounded-lg border;
+    }
+}
