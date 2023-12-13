@@ -29,7 +29,7 @@
     });
 </script>
 
-<header class="w-full py-6 lg:px-12 flex {isHome ? 'justify-between' : 'justify-start'} items-center relative" bind:this={headerContainer}>
+<header class="absolute top-0 left-0 w-full py-6 lg:px-12 flex {isHome ? 'justify-between' : 'justify-start'} items-center relative" bind:this={headerContainer}>
     {#if isHome}
         <div class="text-left">
             <p class="text-lg font-semibold">Quado</p>

@@ -3,14 +3,14 @@
     import ActionBar from "$lib/protected/components/actionBar.svelte";
 </script>
 
-<div class="w-screen h-screen overflow-hidden flex flex-col justify-center items-center">
-    <Header></Header>
+<div class="w-screen h-screen overflow-hidden flex flex-col lg:flex-row-reverse justify-center items-center">
+    <div class="w-screen flex flex-col flex-1 relative">
+        <Header></Header>
 
-    <div class="w-screen flex flex-col flex-1 lg:flex-row-reverse">
         <main class="bg-orange-500 w-screen lg:w-full flex-1 overflow-x-hidden overflow-y-auto">
             <slot />
         </main>
-
-        <ActionBar></ActionBar>
     </div>
+
+    <ActionBar></ActionBar>
 </div>
