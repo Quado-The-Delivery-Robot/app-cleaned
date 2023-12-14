@@ -6,7 +6,7 @@
     $: isHome = $page.url.pathname === "/home";
     let isMounted: boolean = false;
     let pageName: string = $page.url.pathname;
-    let headerContainer: HTMLElement;
+    export let headerContainer: HTMLElement;
 
     function getPageName() {
         if (!isMounted) return;
