@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Background from "$lib/protected/components/background.svelte";
     import Header from "$lib/protected/components/header.svelte";
     import ActionBar from "$lib/protected/components/actionBar.svelte";
     import { Svrollbar } from "svrollbar";
@@ -19,6 +20,8 @@
         headerResizeObserver.observe(headerContainer);
     });
 </script>
+
+<Background></Background>
 
 <div class="w-screen h-screen overflow-hidden flex flex-col lg:flex-row-reverse justify-center items-center">
     <div class="w-screen flex flex-col flex-1 h-full relative">
