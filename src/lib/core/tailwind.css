@@ -256,7 +256,11 @@
         @apply onlyGlass rounded-lg border;
     }
 
-    button.glass {
+    button.glass, input.glass {
         @apply px-5 py-2.5;
+    }
+
+    input.glass {
+        @apply rounded-full;
     }
 }
