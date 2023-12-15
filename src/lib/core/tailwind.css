@@ -249,15 +249,27 @@
     }
 
     .onlyGlassSecondary {
-        @apply onlyGlass bg-backgroundSecondary-950 bg-opacity-70
+        @apply onlyGlass bg-backgroundSecondary-950 bg-opacity-70;
     }
 
     .glass {
         @apply onlyGlass rounded-lg border;
     }
 
-    button.glass, input.glass {
+    button.glass,
+    input.glass,
+    a.glass {
         @apply px-5 py-2.5;
+    }
+
+    button.glass,
+    a.glass {
+        @apply transition-all duration-300;
+    }
+
+    button.glass:hover,
+    a.glass:hover {
+        @apply -translate-y-1;
     }
 
     input.glass {
