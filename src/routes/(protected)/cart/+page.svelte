@@ -1,10 +1,8 @@
 <script lang="ts">
-    import { PUBLIC_ENDPOINT } from "$env/static/public";
-
     let result: boolean = false;
 
     async function send() {
-        const createFetch = await fetch(`${PUBLIC_ENDPOINT}/v1/orders/new`, {
+        const createFetch = await fetch(`api/v1/orders/new`, {
             method: "POST",
             body: JSON.stringify({
                 restaurant: "subway",
