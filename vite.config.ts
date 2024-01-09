@@ -6,7 +6,7 @@ export default defineConfig({
 
     server: {
         proxy: {
-            "/api": { target: "http://api.quadoapp.com", changeOrigin: true },
+            "/api": { target: "http://api.quadoapp.com", changeOrigin: true, rewrite: (path) => path.replace("/api", "") },
         },
     },
 });
