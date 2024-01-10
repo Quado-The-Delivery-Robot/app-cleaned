@@ -10,7 +10,7 @@ async function redirect({ request, url, fetch }: RequestEvent): Promise<Response
         await fetch(`${PUBLIC_ENDPOINT}/${apiURL}`, {
             body: body,
             headers: request.headers,
-            method: method || "GET",
+            method: method,
             credentials: "include",
         }).then(async (response) => await response.json())
     );
