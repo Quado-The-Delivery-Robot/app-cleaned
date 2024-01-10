@@ -5,11 +5,12 @@ async function redirect({ request, url, fetch }: RequestEvent): Promise<Response
     const apiURL: string = url.searchParams.get("url")!;
     const method: string = url.searchParams.get("method") || "GET";
     const body: string | null = url.searchParams.get("body");
-    console.log(body);
+    console.log(`${PUBLIC_ENDPOINT}/${apiURL}`);
     return json(
         await fetch(`${PUBLIC_ENDPOINT}/${apiURL}`, {
             body: body,
-            method: method || "GET",
+            headers: request.headers,
+            method: method,
             credentials: "include",
         }).then(async (response) => await response.json())
     );
