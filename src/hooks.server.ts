@@ -11,4 +11,14 @@ export const handle: Handle = SvelteKitAuth({
     pages: {
         signIn: "/login",
     },
+    cookies: {
+        sessionToken: {
+            options: {
+                httpOnly: true,
+                sameSite: "lax",
+                path: "/",
+                secure: process.env.NODE_ENV === "production" ? true : false,
+            },
+        },
+    },
 });
