@@ -3,11 +3,11 @@
     import Section from "$lib/protected/components/section.svelte";
     import type { restuarantItem, restaurant } from "$lib/core/types";
 
-    export let data: any;
+    export let data: { page: { [key: string]: { type: string; restaurant: restaurant[] } } } = { page: {} };
 </script>
 
 <Search />
 
 {#each Object.entries(data.page) as [sectionName, sectionData]}
-    <Section data={sectionData.restaurants} />
+    <Section {sectionName} data={sectionData.restaurant} />
 {/each}
