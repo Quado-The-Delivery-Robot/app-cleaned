@@ -13,6 +13,7 @@ export const handle: Handle = SvelteKitAuth({
     },
     cookies: {
         sessionToken: {
+            name: "authjs.session-token",
             options: {
                 httpOnly: true,
                 sameSite: "lax",
