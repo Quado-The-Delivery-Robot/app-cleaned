@@ -11,4 +11,24 @@ export const handle: Handle = SvelteKitAuth({
     pages: {
         signIn: "/login",
     },
+    cookies: {
+        sessionToken: {
+            name: "authjs.session-token",
+            options: {
+                httpOnly: true,
+                sameSite: "lax",
+                path: "/",
+                domain: ".quadoapp.com",
+            },
+        },
+        csrfToken: {
+            name: "__Host-authjs.csrf-token",
+            options: {
+                httpOnly: true,
+                sameSite: "lax",
+                path: "/",
+                domain: ".quadoapp.com",
+            },
+        },
+    },
 });
