@@ -21,5 +21,23 @@ export const handle: Handle = SvelteKitAuth({
                 domain: ".quadoapp.com",
             },
         },
+        callbackUrl: {
+            name: "__Secure-authjs.callback-url",
+            options: {
+                httpOnly: true,
+                sameSite: "lax",
+                path: "/",
+                domain: ".quadoapp.com",
+            },
+        },
+        csrfToken: {
+            name: "__Host-authjs.csrf-token",
+            options: {
+                httpOnly: true,
+                sameSite: "lax",
+                path: "/",
+                domain: ".quadoapp.com",
+            },
+        },
     },
 });
