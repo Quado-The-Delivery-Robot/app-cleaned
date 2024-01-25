@@ -2,7 +2,7 @@
     let result: boolean = false;
 
     async function send() {
-        const createFetch = await fetch("/cart", {
+        const createFetch = await fetch("/cart/place", {
             method: "POST",
             body: JSON.stringify({
                 restaurant: "subway",
