@@ -15,8 +15,9 @@
                 ],
             }),
         });
-        const { success } = await createFetch.json();
-        result = success;
+        const a = await createFetch.json();
+        console.log(a);
+        result = true;
     }
 </script>
 
