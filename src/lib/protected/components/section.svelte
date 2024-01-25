@@ -5,8 +5,9 @@
     export let sectionData: string = "";
     export let type: string;
     export let sectionName: string;
+    export let image: string;
 </script>
 
-<div class=" flex felx-row gap-2 py-2 px-4">
-    <button>tester</button>
+<div class=" flex felx-col gap-2 py-2 px-4">
+    <button>{image}</button>
 </div>
