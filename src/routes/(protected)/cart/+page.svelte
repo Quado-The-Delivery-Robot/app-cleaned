@@ -3,17 +3,7 @@
     let result: boolean = false;
 
     async function send() {
-        const createFetch = await fetch(`${PUBLIC_ENDPOINT}/v1/orders/new`, {
-            body: JSON.stringify({
-                restaurant: "subway",
-                items: [
-                    {
-                        id: 0,
-                        quantity: 1,
-                    },
-                ],
-            }),
-        });
+        const createFetch = await fetch(`${PUBLIC_ENDPOINT}/v1/orders/new`);
         const a = await createFetch.json();
         console.log(a);
         result = true;
