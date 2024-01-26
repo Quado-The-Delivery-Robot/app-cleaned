@@ -4,7 +4,6 @@
 
     async function send() {
         const createFetch = await fetch(`${PUBLIC_ENDPOINT}/v1/orders/new`, {
-            method: "POST",
             body: JSON.stringify({
                 restaurant: "subway",
                 items: [
