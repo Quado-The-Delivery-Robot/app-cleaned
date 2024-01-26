@@ -9,5 +9,5 @@
 <Search />
 
 {#each Object.entries(data.page) as [sectionName, sectionData]}
-    <Section {sectionName} data={sectionData.restaurant} />
+    <Section {sectionName} type={sectionData.type} data={sectionData.restaurant} />
 {/each}
