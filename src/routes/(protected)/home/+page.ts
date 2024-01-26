@@ -1,6 +1,6 @@
 import { PUBLIC_ENDPOINT } from "$env/static/public";
 import type { restaurant } from "$lib/core/types";
-import type { PageServerLoad } from "./$types";
+import type { PageLoad } from "./$types";
 
 const SECTIONS: { [key: string]: string[] } = {
     Recommended: ["full", "v1/restaurants/recommended"],
@@ -8,7 +8,7 @@ const SECTIONS: { [key: string]: string[] } = {
     Popular: ["mini", "v1/restaurants/recommended"],
 };
 
-export const load: PageServerLoad = async ({ fetch }) => {
+export const load: PageLoad = async ({ fetch }) => {
     const data: { [key: string]: { type: string; restaurants: restaurant[] } } = {};
 
     for (const [key, sectionData] of Object.entries(SECTIONS)) {

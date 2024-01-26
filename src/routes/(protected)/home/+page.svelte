@@ -8,6 +8,10 @@
 
 <Search />
 
-{#each Object.entries(data.page) as [sectionName, sectionData]}
-    <Section {sectionName} type={sectionData.type} data={sectionData.restaurant} />
-{/each}
+{#await data.page}
+    <p>Loading...</p>
+{:then}
+    {#each Object.entries(data.page) as [sectionName, sectionData]}
+        <Section {sectionName} type={sectionData.type} data={sectionData.restaurant} />
+    {/each}
+{/await}
