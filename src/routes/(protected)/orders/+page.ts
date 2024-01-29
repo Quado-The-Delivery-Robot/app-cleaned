@@ -4,7 +4,7 @@ import type { PageLoad } from "./$types";
 
 export const load: PageLoad = async ({ fetch }) => {
     const result = await fetch(`${PUBLIC_ENDPOINT}/v1/orders/get`, {
-        credentials: "same-origin",
+        credentials: "include",
     });
     const { orders }: { success: boolean; orders: order[] } = await result.json();
 

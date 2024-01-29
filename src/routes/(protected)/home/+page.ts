@@ -13,7 +13,7 @@ export const load: PageLoad = async ({ fetch }) => {
 
     for (const [key, sectionData] of Object.entries(SECTIONS)) {
         const result = await fetch(`${PUBLIC_ENDPOINT}/${sectionData[1]}`, {
-            credentials: "same-origin",
+            credentials: "include",
         });
         const { restaurants } = await result.json();
         data[key] = {
