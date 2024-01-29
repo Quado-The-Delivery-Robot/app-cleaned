@@ -1,14 +1,10 @@
 <script lang="ts">
     import type { restuarantItem, restaurant } from "$lib/core/types";
     import { Splide } from "@splidejs/svelte-splide";
-    import { Container } from "postcss";
-    
 
     export let hasHeader: boolean;
-    export let data: restaurant[] | restuarantItem[] = [];
-    export let sectionData: string = "";
     export let sectionName: string;
-    export let items:any[];
+    export let items: any[];
 </script>
 
 <div class=" flex felx-col gap-2 py-2 px-4">
@@ -32,7 +28,8 @@
             }}
         >
             {#each items as item}
-                <Container data={items}></Container>
+                {item}
+            {/each}
         </Splide>
     </div>
 </div>

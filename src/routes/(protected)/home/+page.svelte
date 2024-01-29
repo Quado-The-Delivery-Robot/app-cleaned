@@ -12,6 +12,6 @@
     <p>Loading...</p>
 {:then}
     {#each Object.entries(data.page) as [sectionName, sectionData]}
-        <Section {sectionName} type={sectionData.type} data={sectionData.restaurant} />
+        <Section {sectionName} hasHeader={true} items={sectionData.restaurant} />
     {/each}
 {/await}
