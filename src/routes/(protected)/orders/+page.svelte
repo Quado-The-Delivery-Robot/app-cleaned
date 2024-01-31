@@ -1,9 +1,14 @@
 <script lang="ts">
     import Title from "$lib/core/components/title.svelte";
     import Order from "$lib/protected/orders/order.svelte";
+    import { onMount } from "svelte";
     import type { PageData } from "./$types";
 
     export let data: PageData;
+
+    onMount(() => {
+        console.log(data);
+    });
 </script>
 
 <Title>Orders</Title>
