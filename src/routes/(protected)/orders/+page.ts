@@ -8,5 +8,5 @@ export const load: PageLoad = async ({ fetch }) => {
     });
     const { orders }: { success: boolean; orders: order[] } = await result.json();
 
-    return { orders };
+    return { page: { orders } };
 };
