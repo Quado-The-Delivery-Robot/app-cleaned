@@ -7,6 +7,6 @@ export const load: PageLoad = async ({ fetch }) => {
         credentials: "include",
     });
     const { orders }: { success: boolean; orders: order[] } = await result.json();
-
+    console.log({ page: { orders } });
     return { page: { orders } };
 };
