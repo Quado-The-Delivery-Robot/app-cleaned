@@ -4,7 +4,7 @@
 
     export let hasHeader: boolean;
     export let sectionName: string;
-    export let items: any[];
+    export let items: any[] = [];
 </script>
 
 <div class=" flex felx-col gap-2 py-2 px-4">
