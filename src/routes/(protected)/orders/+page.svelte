@@ -1,8 +1,13 @@
 <script lang="ts">
     import Title from "$lib/core/components/title.svelte";
     import Order from "$lib/protected/orders/order.svelte";
+    import { onMount } from "svelte";
 
     export let { orders }: { orders: any[] } = { orders: [] };
+
+    onMount(() => {
+        console.log(orders);
+    });
 </script>
 
 <Title>Orders</Title>
