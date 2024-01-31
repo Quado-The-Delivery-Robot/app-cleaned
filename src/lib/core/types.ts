@@ -29,3 +29,11 @@ export type restaurant = {
     items: any;
     description: string;
 };
+
+export type sectionItem = {
+    name: string;
+    colors: string[];
+    image: string;
+    id: string;
+    description: string;
+};

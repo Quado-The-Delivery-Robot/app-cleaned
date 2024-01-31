@@ -1,13 +1,13 @@
 <script lang="ts">
-    import type { restuarantItem, restaurant } from "$lib/core/types";
     import { Splide } from "@splidejs/svelte-splide";
+    import IconItemContainer from "./itemContainers/icon.svelte";
 
     export let hasHeader: boolean;
     export let sectionName: string;
     export let items: any[] = [];
 </script>
 
-<div class=" flex felx-col gap-2 py-2 px-4">
+<div class=" w-full">
     {#if hasHeader}
         <div class="flex justify-between items-center mb-1">
             <p class="text-lg font-semibold">{sectionName}</p>
@@ -28,8 +28,9 @@
             }}
         >
             {#each items as item}
-                {item}
+                <IconItemContainer data={item} />
             {/each}
+            <div>dummydata</div>
         </Splide>
     </div>
 </div>
