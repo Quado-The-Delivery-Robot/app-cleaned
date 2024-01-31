@@ -1,8 +1,9 @@
 <script lang="ts">
     import Title from "$lib/core/components/title.svelte";
     import Order from "$lib/protected/orders/order.svelte";
+    import type { PageData } from "./$types";
 
-    export let data: { orders: any[] } = { orders: [] };
+    export let data: PageData;
 </script>
 
 <Title>Orders</Title>
