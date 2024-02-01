@@ -4,11 +4,11 @@ export type orderItem = {
     price: number;
 };
 
-type orderStatus = "Not started" | "Picking up order" | "Waiting for order" | "On its way" | "Delivered";
+type orderState = "Not started" | "Picking up order" | "Waiting for order" | "On its way" | "Delivered";
 
 export type order = {
     price: number;
-    status: orderStatus;
+    state: orderState;
     restaurant: string;
     items: orderItem[];
 };
