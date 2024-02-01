@@ -5,7 +5,7 @@
     import { onMount } from "svelte";
     import type { order } from "$lib/core/types";
 
-    let orders: order[];
+    let orders: order[] = [];
 
     onMount(async () => {
         const result = await fetch(`${PUBLIC_ENDPOINT}/v1/orders/get`, {
