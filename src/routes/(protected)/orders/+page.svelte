@@ -29,7 +29,7 @@
         </div>
     {:else}
         {#each orders as { status, restaurant, items, price }}
-            <Order order={{ status, restaurant, price, details: items.join(", ") }} />
+            <Order order={{ status, restaurant, price, details: "" }} />
         {/each}
     {/if}
 </div>

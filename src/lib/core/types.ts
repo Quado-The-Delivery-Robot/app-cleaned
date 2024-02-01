@@ -1,9 +1,10 @@
-type orderItem = {
+export type orderItem = {
     id: number;
-    quanity: number;
+    quantity: number;
+    price: number;
 };
 
-type orderStatus = "Picking up order" | "Waiting for order" | "On its way" | "Delivered";
+type orderStatus = "Not started" | "Picking up order" | "Waiting for order" | "On its way" | "Delivered";
 
 export type order = {
     price: number;
