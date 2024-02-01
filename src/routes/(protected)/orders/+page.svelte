@@ -13,7 +13,6 @@
         });
 
         orders = (await result.json()).orders;
-        console.log(orders);
     });
 </script>
 
