@@ -5,5 +5,5 @@
 </script>
 
 <button class=" w-fit h-fit">
-    <img class=" p-" src={data.image} alt={data.name} />
+    <img class=" p-2" src={data.image} alt={data.name} />
 </button>
