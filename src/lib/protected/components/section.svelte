@@ -30,7 +30,6 @@
             {#each items as item}
                 <IconItemContainer data={item} />
             {/each}
-            <div>dummydata</div>
         </Splide>
     </div>
 </div>

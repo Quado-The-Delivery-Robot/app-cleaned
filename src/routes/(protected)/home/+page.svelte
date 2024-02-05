@@ -12,6 +12,6 @@
     <p>Loading...</p>
 {:then}
     {#each Object.entries(data.page) as [sectionName, sectionData]}
-        <Section {sectionName} hasHeader={true} />
+        <Section {sectionName} items={[{ name: "something", colors: ["#000", "#000"], id: "adddsd", image: "", decription: "yummy" }]} hasHeader={true} />
     {/each}
 {/await}

@@ -4,6 +4,6 @@
     export let data: sectionItem;
 </script>
 
-<button class=" w-fit h-fit">
-    <img class=" p-" src={data.image} alt={data.name} />
+<button class=" w-12 aspect-square">
+    <img class=" w-full h-full p-2" src={data.image} alt={data.name} />
 </button>
