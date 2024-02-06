@@ -1,17 +1,17 @@
 <script lang="ts">
     import Search from "$lib/protected/home/search.svelte";
     import Section from "$lib/protected/components/section.svelte";
-    import type { restuarantItem, restaurant } from "$lib/core/types";
+    import type { PageData } from "./$types";
 
-    export let data: { page: { [key: string]: { type: string; restaurant: restaurant[] } } } = { page: {} };
+    export let data: PageData;
 </script>
 
 <Search />
 
-{#await data.page}
+{#await data.data}
     <p>Loading...</p>
 {:then}
-    {#each Object.entries(data.page) as [sectionName, sectionData]}
-        <Section {sectionName} items={[{ name: "something", colors: ["#000", "#000"], id: "adddsd", image: "", decription: "yummy" }]} hasHeader={true} />
+    {#each Object.entries(data.data) as [sectionName, sectionData]}
+        <Section {sectionName} items={sectionData.data} hasHeader={true} />
     {/each}
 {/await}

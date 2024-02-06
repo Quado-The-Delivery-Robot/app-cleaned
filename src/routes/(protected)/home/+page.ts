@@ -1,5 +1,4 @@
 import { PUBLIC_ENDPOINT } from "$env/static/public";
-import type { restaurant } from "$lib/core/types";
 import type { PageLoad } from "./$types";
 
 const SECTIONS: { [key: string]: string[] } = {
@@ -9,18 +8,18 @@ const SECTIONS: { [key: string]: string[] } = {
 };
 
 export const load: PageLoad = async ({ fetch }) => {
-    const data: { [key: string]: { type: string; restaurants: restaurant[] } } = {};
+    const data: { [key: string]: { type: string; data: any[] } } = {};
 
     for (const [key, sectionData] of Object.entries(SECTIONS)) {
         const result = await fetch(`${PUBLIC_ENDPOINT}/${sectionData[1]}`, {
             credentials: "include",
         });
-        const { restaurants } = await result.json();
+        const { data } = await result.json();
         data[key] = {
             type: sectionData[0],
-            restaurants,
+            data,
         };
     }
 
-    return { page: data };
+    return { data };
 };
