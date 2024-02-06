@@ -1,10 +1,12 @@
 <script lang="ts">
     import { Splide } from "@splidejs/svelte-splide";
     import IconItemContainer from "./itemContainers/icon.svelte";
+    import type { sectionType } from "$lib/core/types";
 
     export let hasHeader: boolean;
     export let sectionName: string;
     export let items: any[] = [];
+    export let type: sectionType;
 </script>
 
 <div class=" w-full">
@@ -28,7 +30,9 @@
             }}
         >
             {#each items as item}
-                <IconItemContainer data={item} />
+                {#if type === "icon"}
+                    <IconItemContainer data={item} />
+                {/if}
             {/each}
         </Splide>
     </div>

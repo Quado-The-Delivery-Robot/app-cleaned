@@ -1,22 +1,24 @@
 import { PUBLIC_ENDPOINT } from "$env/static/public";
 import type { PageLoad } from "./$types";
+import type { sectionType } from "$lib/core/types";
 
-const SECTIONS: { [key: string]: string[] } = {
-    Recommended: ["full", "v1/restaurants/recommended"],
-    "New to you": ["mini", "v1/restaurants/recommended"],
-    Popular: ["mini", "v1/restaurants/recommended"],
+const sections: { [key: string]: any[] } = {
+    Recommended: ["icon", false, "v1/restaurants/recommended"],
+    "New to you": ["icon", true, "v1/restaurants/recommended"],
+    Popular: ["icon", true, "v1/restaurants/recommended"],
 };
 
 export const load: PageLoad = async ({ fetch }) => {
-    const data: { [key: string]: { type: string; data: any[] } } = {};
+    const data: { [key: string]: { hasHeader: boolean; type: sectionType; data: any[] } } = {};
 
-    for (const [key, sectionData] of Object.entries(SECTIONS)) {
+    for (const [key, sectionData] of Object.entries(sections)) {
         const result = await fetch(`${PUBLIC_ENDPOINT}/${sectionData[1]}`, {
             credentials: "include",
         });
         const { data } = await result.json();
         data[key] = {
             type: sectionData[0],
+            hasHeader: sectionData[1],
             data,
         };
     }

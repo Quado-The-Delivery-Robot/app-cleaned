@@ -31,10 +31,12 @@ export type restaurant = {
     description: string;
 };
 
+export type sectionType = "icon";
+
 export type sectionItem = {
     name: string;
-    colors: string[];
+    colors: string[] | null;
     image: string;
     id: string;
-    description: string;
+    description: string | null;
 };
