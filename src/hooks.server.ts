@@ -15,7 +15,25 @@ export const handle: Handle = SvelteKitAuth({
         sessionToken: {
             name: "authjs.session-token",
             options: {
-                httpOnly: true,
+                httpOnly: false,
+                sameSite: "lax",
+                path: "/",
+                domain: ".quadoapp.com",
+            },
+        },
+        csrfToken: {
+            name: "authjs.csrf-token",
+            options: {
+                httpOnly: false,
+                sameSite: "lax",
+                path: "/",
+                domain: ".quadoapp.com",
+            },
+        },
+        pkceCodeVerifier: {
+            name: "authjs.pkce.code_verifier",
+            options: {
+                httpOnly: false,
                 sameSite: "lax",
                 path: "/",
                 domain: ".quadoapp.com",
