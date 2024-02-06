@@ -12,7 +12,7 @@ export const load: PageLoad = async ({ fetch }) => {
     const data: { [key: string]: { hasHeader: boolean; type: sectionType; data: any[] } } = {};
 
     for (const [key, sectionData] of Object.entries(sections)) {
-        const result = await fetch(`${PUBLIC_ENDPOINT}/${sectionData[1]}`, {
+        const result = await fetch(`${PUBLIC_ENDPOINT}/${sectionData[2]}`, {
             credentials: "include",
         });
         const { data } = await result.json();
