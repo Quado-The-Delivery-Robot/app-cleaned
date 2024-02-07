@@ -9,7 +9,7 @@
     export let type: sectionType;
 </script>
 
-<div class=" w-full">
+<div class="w-full">
     {#if hasHeader}
         <div class="flex justify-between items-center mb-1">
             <p class="text-lg font-semibold">{sectionName}</p>
