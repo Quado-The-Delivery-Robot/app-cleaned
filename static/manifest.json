@@ -3,7 +3,7 @@
     "short_name": "Quado",
     "name": "Quado",
     "description": "",
-    "start_url": "/app",
+    "start_url": "/home",
     "icons": [
         {
             "src": "/pwa/android-icon-36x36.png",
