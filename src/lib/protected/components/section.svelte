@@ -16,6 +16,7 @@
             <a href="/{sectionName.toLowerCase()}/all" class="flex items-center text-sm opacity-50 font-light">See all </a>
         </div>
     {/if}
+
     <div class="rounded-lg overflow-hidden">
         <Splide
             options={{
