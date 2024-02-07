@@ -23,5 +23,5 @@ export const load: PageLoad = async ({ fetch }) => {
         };
     }
 
-    return { data };
+    return { feed: data };
 };

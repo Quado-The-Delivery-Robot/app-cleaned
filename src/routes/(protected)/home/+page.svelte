@@ -8,10 +8,10 @@
 
 <Search />
 
-{#await data.data}
+{#await data.feed}
     <p>Loading...</p>
 {:then}
-    {#each Object.entries(data.data) as [sectionName, sectionData]}
+    {#each Object.entries(data.feed) as [sectionName, sectionData]}
         <Section {sectionName} hasHeader={sectionData.hasHeader} items={sectionData.data} type={sectionData.type} />
     {/each}
 {/await}
