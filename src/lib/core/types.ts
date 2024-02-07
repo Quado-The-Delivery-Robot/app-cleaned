@@ -11,6 +11,7 @@ export type order = {
     state: orderState;
     restaurant: string;
     items: orderItem[];
+    placed: number;
 };
 
 export type restuarantItem = {
