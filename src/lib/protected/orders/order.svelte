@@ -1,5 +1,7 @@
 <script lang="ts">
-    export let order: any;
+    import type { order } from "$lib/core/types";
+
+    export let order: order;
 </script>
 
 <div class="glass p-5 text-left">
@@ -16,7 +18,7 @@
         {order.state}
     </p>
 
-    <p class="text-base text-primary-800 font-normal">{order.details}</p>
+    <p class="text-base text-primary-800 font-normal"></p>
 </div>
 
 <style>

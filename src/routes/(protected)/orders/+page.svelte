@@ -21,8 +21,8 @@
                 <p class="text-xl">Try ordering something!</p>
             </div>
         {:else}
-            {#each data.orders as { state, restaurant, items, price }}
-                <Order order={{ state, restaurant, price, details: "" }} />
+            {#each data.orders as order}
+                <Order {order} />
             {/each}
         {/if}
     </div>
