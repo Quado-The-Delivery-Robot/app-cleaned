@@ -10,6 +10,6 @@
 
 <style lang="postcss">
     :global(body) {
-        @apply w-full h-screen text-center;
+        @apply w-full h-screen text-center overflow-hidden;
     }
 </style>
