@@ -9,18 +9,20 @@ const sections: { [key: string]: any[] } = {
 };
 
 export const load: PageLoad = async ({ fetch }) => {
-    const data: { [key: string]: { hasHeader: boolean; type: sectionType; data: any[] } } = {};
+    const data: { name: string; hasHeader: boolean; type: sectionType; data: any[] }[] = [];
 
     for (const [key, sectionData] of Object.entries(sections)) {
         const result = await fetch(`${PUBLIC_ENDPOINT}/${sectionData[2]}`, {
             credentials: "include",
         });
         const { data } = await result.json();
-        data[key] = {
+
+        data.push({
+            name: key,
             type: sectionData[0],
             hasHeader: sectionData[1],
             data,
-        };
+        });
     }
 
     return { feed: data };
