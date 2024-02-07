@@ -11,8 +11,8 @@
 {#await data.feed}
     <p>Loading...</p>
 {:then}
-    {data.feed}
     {#each Object.entries(data.feed) as [sectionName, sectionData]}
+        {sectionName}
         <Section {sectionName} hasHeader={sectionData.hasHeader} items={sectionData.data} type={sectionData.type} />
     {/each}
 {/await}
