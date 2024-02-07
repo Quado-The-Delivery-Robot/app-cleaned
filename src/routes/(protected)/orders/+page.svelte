@@ -11,7 +11,7 @@
 {#await data.orders}
     <p>Loading...</p>
 {:then}
-    <div class="flex-col flex gap-4">
+    <div class="flex-col flex gap-4 pb-6">
         {#if data.orders.length == 0}
             <div class="flex flex-col gap-2 justify-center items-center">
                 <svg class="fill-white aspect-square w-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
