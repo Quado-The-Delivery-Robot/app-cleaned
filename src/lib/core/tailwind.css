@@ -241,6 +241,11 @@
     input {
         @apply outline-none;
     }
+
+    /* Removes splidejs slider */
+    .splide__pagination {
+        display: none !important;
+    }
 }
 
 @layer components {
