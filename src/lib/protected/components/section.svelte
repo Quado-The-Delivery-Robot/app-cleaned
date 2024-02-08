@@ -1,11 +1,12 @@
 <script lang="ts">
     import { Splide } from "@splidejs/svelte-splide";
     import IconItemContainer from "./itemContainers/icon.svelte";
-    import type { sectionType } from "$lib/core/types";
+    import SpotlightItemContainer from "./itemContainers/spotlight.svelte";
+    import type { sectionItem, sectionType } from "$lib/core/types";
 
     export let hasHeader: boolean;
     export let name: string;
-    export let items: any[] = [];
+    export let items: sectionItem[];
     export let type: sectionType;
 </script>
 
@@ -33,6 +34,8 @@
             {#each items as item}
                 {#if type === "icon"}
                     <IconItemContainer data={item} />
+                {:else if type === "spotlight"}
+                    <SpotlightItemContainer data={item} />
                 {/if}
             {/each}
         </Splide>

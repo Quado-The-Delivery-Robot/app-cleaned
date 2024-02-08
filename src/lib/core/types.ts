@@ -39,5 +39,5 @@ export type sectionItem = {
     colors: string[] | null;
     image: string;
     id: string;
-    description: string | null;
+    data: any;
 };

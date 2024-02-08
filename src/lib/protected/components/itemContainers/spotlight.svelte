@@ -1,17 +1,15 @@
 <script lang="ts">
     import Base from "./base.svelte";
-    import type { sectionItem, restuarantItem } from "$lib/core/types";
+    import type { sectionItem } from "$lib/core/types";
 
     export let data: sectionItem;
-    export let itemData: restuarantItem;
 </script>
 
 <Base>
     <button class="gap-2 w-12 rounded-lg">
-        <div class=" p-2 flex items-center text-left justify-start snap-start">
-            <p class="text-lg font-bold">{data.name}</p>
-            <p class="text-base"><span>{itemData.name}</span>{itemData.price}</p>
-            <p class="text-sm">{itemData.description}</p>
+        <div class=" h-full p-2 flex items-center text-left justify-start snap-start overflow-hidden">
+            <p class="text-base"><span>{data.name}</span>{data.data.price}</p>
+            <p class="text-sm">{data.data.description}</p>
         </div>
     </button>
 </Base>
