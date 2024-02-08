@@ -20,7 +20,7 @@
             {order.state}
         </p>
 
-        <p class="font-medium">{formatRelative(subDays(order.placed, 3), order.placed)}</p>
+        <p class="font-medium">{formatRelative(subDays(order.placed, 3), new Date())}</p>
     </div>
 
     <p class="text-base text-primary-800 font-normal"></p>
