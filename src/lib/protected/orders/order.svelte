@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { formatRelative, subDays } from "date-fns";
+    import { formatDistanceToNow } from "date-fns";
     import type { order } from "$lib/core/types";
 
     export let order: order;
@@ -20,7 +20,7 @@
             {order.state}
         </p>
 
-        <p class="font-medium">{formatRelative(subDays(order.placed, 3), new Date())}</p>
+        <p class="font-medium">{formatDistanceToNow(order.placed, { addSuffix: true })}</p>
     </div>
 
     <p class="text-base text-primary-800 font-normal"></p>
