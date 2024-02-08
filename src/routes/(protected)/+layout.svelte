@@ -4,21 +4,25 @@
     import ActionBar from "$lib/protected/components/actionBar.svelte";
     import { Svrollbar } from "svrollbar";
     import { onMount } from "svelte";
+    import { navigating } from "$app/stores";
 
     let headerContainer: HTMLElement;
     let viewportContainer: HTMLDivElement;
     let contentContainer: HTMLElement;
+    let isMounted: boolean = false;
 
     function updatePadding() {
+        if (!isMounted) return;
+
         const paddingBottom: string = window.getComputedStyle(headerContainer, null).getPropertyValue("padding-bottom");
         viewportContainer.style.paddingTop = `${headerContainer.clientHeight + parseInt(paddingBottom.match(/\d+/g)?.toString() || "0")}px`;
     }
 
-    onMount(() => {
-        updatePadding();
+    $: if ($navigating === null) updatePadding();
 
-        const headerResizeObserver = new ResizeObserver(() => updatePadding);
-        headerResizeObserver.observe(headerContainer);
+    onMount(() => {
+        isMounted = true;
+        updatePadding();
     });
 </script>
 
@@ -28,7 +32,7 @@
     <div class="w-screen flex flex-col flex-1 h-full relative">
         <Header bind:headerContainer />
 
-        <div class="w-screen h-full overflow-x-hidden lg:w-full flex-1 flex" id="pageViewport" bind:this={viewportContainer}>
+        <div class="pageViewport w-screen h-full overflow-x-hidden lg:w-full flex-1 flex" bind:this={viewportContainer}>
             <main class="w-screen px-7 h-fit lg:px-12 lg:w-full" bind:this={contentContainer}>
                 <slot />
             </main>
@@ -45,12 +49,12 @@
         @apply bg-gradient-to-b from-backgroundSecondary to-background bg-no-repeat;
     }
 
-    #pageViewport {
+    .pageViewport {
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
 
-    #pageViewport::-webkit-scrollbar {
+    .pageViewport::-webkit-scrollbar {
         display: none;
     }
 </style>

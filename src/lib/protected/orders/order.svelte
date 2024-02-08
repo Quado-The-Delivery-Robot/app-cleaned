@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { formatDistanceToNow } from "date-fns";
     import type { order } from "$lib/core/types";
 
     export let order: order;
@@ -10,13 +11,17 @@
         <p class="text-red-400 font-medium text-lg">${order.price}</p>
     </div>
 
-    <p class="font-medium text-primary-700 text-lg flex justify-start items-center mb-2">
-        {#if order.state !== "Delivered" && order.state !== "Not started"}
-            <div class="inProgressIndicator aspect-square h-2.5 bg-brand rounded-full mr-2" />
-        {/if}
+    <div class="flex gap-4 justify-start items-center text-primary-700 text-lg mb-2">
+        <p class="font-medium flex justify-start items-center">
+            {#if order.state !== "Delivered" && order.state !== "Not started"}
+                <div class="inProgressIndicator aspect-square h-2.5 bg-brand rounded-full mr-2" />
+            {/if}
 
-        {order.state}
-    </p>
+            {order.state}
+        </p>
+
+        <p class="font-medium">{formatDistanceToNow(order.placed, { addSuffix: true })}</p>
+    </div>
 
     <p class="text-base text-primary-800 font-normal"></p>
 </div>

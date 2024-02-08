@@ -2,28 +2,51 @@ import { PUBLIC_ENDPOINT } from "$env/static/public";
 import type { PageLoad } from "./$types";
 import type { sectionType } from "$lib/core/types";
 
-const sections: { [key: string]: any[] } = {
-    Recommended: ["icon", false, "v1/restaurants/recommended"],
-    "New to you": ["icon", true, "v1/restaurants/recommended"],
-    Popular: ["icon", true, "v1/restaurants/recommended"],
+type section = {
+    name: string;
+    type: sectionType;
+    endpoint: string;
+    hasHeader: boolean;
 };
 
-export const load: PageLoad = async ({ fetch }) => {
-    const data: { name: string; hasHeader: boolean; type: sectionType; data: any[] }[] = [];
+const sections: section[] = [
+    {
+        name: "Recommended",
+        type: "icon",
+        endpoint: "v1/restaurants/recommended",
+        hasHeader: false,
+    },
+    {
+        name: "New to you",
+        type: "icon",
+        endpoint: "v1/restaurants/recommended",
+        hasHeader: true,
+    },
+    {
+        name: "Popular",
+        type: "icon",
+        endpoint: "v1/restaurants/recommended",
+        hasHeader: true,
+    },
+];
 
-    for (const [key, sectionData] of Object.entries(sections)) {
-        const result = await fetch(`${PUBLIC_ENDPOINT}/${sectionData[2]}`, {
+export const load: PageLoad = async ({ fetch }) => {
+    const feed: { name: string; hasHeader: boolean; type: sectionType; data: any[] }[] = [];
+
+    for (let index = 0; index < sections.length; index++) {
+        const { name, type, endpoint, hasHeader }: section = sections[index];
+        const result = await fetch(`${PUBLIC_ENDPOINT}/${endpoint}`, {
             credentials: "include",
         });
         const { data } = await result.json();
 
-        data.push({
-            name: key,
-            type: sectionData[0],
-            hasHeader: sectionData[1],
+        feed.push({
+            name,
+            type,
+            hasHeader,
             data,
         });
     }
 
-    return { feed: data };
+    return { feed };
 };

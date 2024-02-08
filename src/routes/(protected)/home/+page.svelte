@@ -2,8 +2,13 @@
     import Search from "$lib/protected/home/search.svelte";
     import Section from "$lib/protected/components/section.svelte";
     import type { PageData } from "./$types";
+    import { onMount } from "svelte";
 
     export let data: PageData;
+
+    onMount(() => {
+        console.log(data.feed);
+    });
 </script>
 
 <Search />
