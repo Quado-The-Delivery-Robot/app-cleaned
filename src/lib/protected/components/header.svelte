@@ -29,7 +29,7 @@
     });
 </script>
 
-<header class="onlyGlass border-b absolute top-0 left-0 w-full pb-6 pt-9 px-7 z-10 lg:pt-6 lg:px-12 flex {isHome ? 'justify-between' : 'justify-start'} items-center" bind:this={headerContainer}>
+<header class="onlyGlass border-b absolute top-0 left-0 w-full pb-6 pt-9 px-7 z-10 lg:px-12 flex {isHome ? 'justify-between' : 'justify-start'} items-center" bind:this={headerContainer}>
     {#if isHome}
         <div class="text-left">
             <p class="text-lg font-semibold">Quado</p>
