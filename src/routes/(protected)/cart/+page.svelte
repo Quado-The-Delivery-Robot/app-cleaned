@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Title from "$lib/core/components/title.svelte";
     import { PUBLIC_ENDPOINT } from "$env/static/public";
     let result: boolean = false;
 
@@ -21,6 +22,8 @@
         result = true;
     }
 </script>
+
+<Title>Cart</Title>
 
 <button on:click={send}>place order</button>
 {result}
