@@ -4,21 +4,25 @@
     import ActionBar from "$lib/protected/components/actionBar.svelte";
     import { Svrollbar } from "svrollbar";
     import { onMount } from "svelte";
+    import { navigating } from "$app/stores";
 
     let headerContainer: HTMLElement;
     let viewportContainer: HTMLDivElement;
     let contentContainer: HTMLElement;
+    let isMounted: boolean = false;
 
     function updatePadding() {
+        if (!isMounted) return;
+
         const paddingBottom: string = window.getComputedStyle(headerContainer, null).getPropertyValue("padding-bottom");
         viewportContainer.style.paddingTop = `${headerContainer.clientHeight + parseInt(paddingBottom.match(/\d+/g)?.toString() || "0")}px`;
     }
 
-    onMount(() => {
-        updatePadding();
+    $: if ($navigating === null) updatePadding();
 
-        const headerResizeObserver = new ResizeObserver(() => updatePadding);
-        headerResizeObserver.observe(headerContainer);
+    onMount(() => {
+        isMounted = true;
+        updatePadding();
     });
 </script>
 
