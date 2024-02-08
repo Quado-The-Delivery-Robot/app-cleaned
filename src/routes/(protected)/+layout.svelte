@@ -28,7 +28,7 @@
     <div class="w-screen flex flex-col flex-1 h-full relative">
         <Header bind:headerContainer />
 
-        <div class="w-screen h-full overflow-x-hidden lg:w-full flex-1 flex" id="pageViewport" bind:this={viewportContainer}>
+        <div class="pageViewport w-screen h-full overflow-x-hidden lg:w-full flex-1 flex" bind:this={viewportContainer}>
             <main class="w-screen px-7 h-fit lg:px-12 lg:w-full" bind:this={contentContainer}>
                 <slot />
             </main>
@@ -45,12 +45,12 @@
         @apply bg-gradient-to-b from-backgroundSecondary to-background bg-no-repeat;
     }
 
-    #pageViewport {
+    .pageViewport {
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
 
-    #pageViewport::-webkit-scrollbar {
+    .pageViewport::-webkit-scrollbar {
         display: none;
     }
 </style>
