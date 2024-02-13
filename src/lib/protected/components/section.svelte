@@ -31,11 +31,21 @@
                 omitEnd: true,
             }}
         >
-            {#each items as item}
+            {#each items as item, itemID}
                 {#if type === "icon"}
                     <IconItemContainer data={item} />
                 {:else if type === "spotlight"}
-                    <SpotlightItemContainer data={item} />
+                    <SpotlightItemContainer
+                        data={{
+                            colors: null,
+                            name: item.name,
+                            image: item.image,
+                            id: itemID.toString(),
+                            data: {
+                                subName: `$${item.price}`,
+                            },
+                        }}
+                    />
                 {/if}
             {/each}
         </Splide>

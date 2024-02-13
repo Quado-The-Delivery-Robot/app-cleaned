@@ -35,6 +35,7 @@ export type restaurant = {
 export type sectionType = "icon" | "spotlight";
 
 export type sectionItem = {
+    [x: string]: any;
     name: string;
     colors: string[] | null;
     image: string;
