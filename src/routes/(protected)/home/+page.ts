@@ -12,7 +12,7 @@ type section = {
 const sections: section[] = [
     {
         name: "Recommended",
-        type: "icon",
+        type: "spotlight",
         endpoint: "v1/restaurants/recommended",
         hasHeader: false,
     },
