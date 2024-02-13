@@ -6,7 +6,7 @@
 </script>
 
 <Base>
-    <button class="w-12 aspect-square">
+    <button class="w-18 aspect-square" style="background-color:{data.colors}">
         <img class="w-full h-full p-2" src={data.image} alt={data.name} />
     </button>
 </Base>
