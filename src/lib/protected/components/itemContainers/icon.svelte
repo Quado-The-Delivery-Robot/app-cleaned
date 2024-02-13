@@ -14,7 +14,7 @@
 </script>
 
 <Base>
-    <button class="w-24 aspect-square rounded-lg p-2" style="background-color: {backgroundColor};">
+    <button class="w-24 aspect-square rounded-lg p-2 border" style="background-color: {backgroundColor};">
         <img class="w-full h-full p-2" src={data.image} alt={data.name} />
     </button>
 </Base>
