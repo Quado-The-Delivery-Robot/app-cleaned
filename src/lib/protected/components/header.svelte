@@ -3,22 +3,47 @@
     import { page, navigating } from "$app/stores";
     import { onMount } from "svelte";
 
-    $: isHome = $page.url.pathname === "/home";
+    export let headerContainer: HTMLElement;
+    let pageTitle: HTMLHeadingElement | null = null;
+    let pageTitleObserver: MutationObserver | null = null;
     let isMounted: boolean = false;
     let pageName: string = $page.url.pathname;
-    export let headerContainer: HTMLElement;
+    $: isHome = $page.url.pathname === "/home";
 
     function getPageName() {
         if (!isMounted) return;
 
-        const header: HTMLHeadingElement | null = document.querySelector("h1");
+        pageTitle = document.querySelector("h1");
 
-        if (header !== null) {
-            header.style.display = "none";
-            pageName = header.innerText;
+        if (pageTitle !== null) {
+            pageTitle.style.display = "none";
+            pageName = pageTitle.innerText;
+            startObserving();
         } else {
             pageName = "Quado";
+            stopObserving();
         }
+    }
+
+    function stopObserving() {
+        if (!pageTitleObserver) return;
+
+        pageTitleObserver.disconnect();
+        pageTitleObserver = null;
+    }
+
+    function startObserving() {
+        stopObserving();
+
+        pageTitleObserver = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === "characterData" || mutation.type === "childList") {
+                    pageName = pageTitle!.innerText;
+                }
+            });
+        });
+
+        pageTitleObserver.observe(pageTitle!, { characterData: true, subtree: true });
     }
 
     $: if ($navigating === null) getPageName();
