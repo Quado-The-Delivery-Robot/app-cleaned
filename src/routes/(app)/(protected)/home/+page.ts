@@ -13,7 +13,7 @@ const sections: section[] = [
     {
         name: "Recommended",
         type: "spotlight",
-        endpoint: "v1/restaurants/recommended",
+        endpoint: "v1/items/recommended",
         hasHeader: false,
     },
     {

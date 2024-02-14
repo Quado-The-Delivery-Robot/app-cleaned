@@ -37,7 +37,7 @@
                 {:else if type === "spotlight"}
                     <SpotlightItemContainer
                         data={{
-                            colors: null,
+                            colors: "colors" in item.data ? item.data.colors : ["#000000", "#000000", "#000000"],
                             name: item.name,
                             image: item.image,
                             id: itemID.toString(),
