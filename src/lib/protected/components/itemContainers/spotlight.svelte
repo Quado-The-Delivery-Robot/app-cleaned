@@ -18,7 +18,7 @@
 
 <Base>
     <button class="gap-2 f-full w-fit rounded-lg" style="background-color: {backgroundColor}; border-color: {borderColor};">
-        <div class=" p-2 flex items-center text-left justify-start snap-start overflow-hidden">
+        <div class="p-2 flex items-center text-left justify-start snap-start overflow-hidden">
             <p class="text-base"><span>{data.name}</span>{data.data.subName}</p>
             <p class="text-sm">{data.data.description}</p>
         </div>
