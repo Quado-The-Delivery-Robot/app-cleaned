@@ -8,7 +8,7 @@
 
 <Search />
 
-<div class="flex flex-col gap-10 justify-start items-start">
+<div class="flex flex-col gap-6 justify-start items-start">
     {#await data.feed}
         <p>Loading...</p>
     {:then}
