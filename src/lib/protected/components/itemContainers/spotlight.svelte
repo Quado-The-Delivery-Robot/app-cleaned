@@ -17,9 +17,9 @@
 </script>
 
 <Base>
-    <button class="gap-2 aspect-square w-48 border rounded-lg" style="background-color: {backgroundColor}; border-color: {borderColor};">
+    <button class="gap-2 aspect-square w-48 border rounded-lg flex-row" style="background-color: {backgroundColor}; border-color: {borderColor};">
         <div class="p-2 flex items-center text-left justify-start snap-start overflow-hidden">
-            <p class="text-base"><span>{data.name}</span>{data.data.subName}</p>
+            <p class="text-base font-bold"><span class="mr-2 font-semibold">{data.name}</span>{data.data.subName}</p>
             <p class="text-sm">{data.data.description}</p>
         </div>
     </button>
