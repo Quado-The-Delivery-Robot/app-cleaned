@@ -8,10 +8,12 @@
 
 <Search />
 
-{#await data.feed}
-    <p>Loading...</p>
-{:then}
-    {#each Object.values(data.feed) as section}
-        <Section name={section.name} hasHeader={section.hasHeader} items={section.data} type={section.type} />
-    {/each}
-{/await}
+<div class="flex flex-col gap-10 justify-start items-start">
+    {#await data.feed}
+        <p>Loading...</p>
+    {:then}
+        {#each Object.values(data.feed) as section}
+            <Section name={section.name} hasHeader={section.hasHeader} items={section.data} type={section.type} />
+        {/each}
+    {/await}
+</div>
