@@ -35,10 +35,12 @@
                 new Marker({ color: "#00FF00" }).setLngLat([139.753, 35.6844]).addTo(map);
             }
         })();
-    });
 
-    onDestroy(() => {
-        map.remove();
+        return () => {
+            if (!map) return;
+
+            map.remove();
+        };
     });
 </script>
 
