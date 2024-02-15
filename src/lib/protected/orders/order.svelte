@@ -3,7 +3,7 @@
     import { Map, NavigationControl, Marker } from "maplibre-gl";
     import { PUBLIC_MAPTILER_KEY } from "$env/static/public";
     import { formatDistanceToNow } from "date-fns";
-    import { onMount } from "svelte";
+    import { onDestroy, onMount } from "svelte";
     import type { order } from "$lib/core/types";
 
     export let order: order;
@@ -35,10 +35,10 @@
                 new Marker({ color: "#00FF00" }).setLngLat([139.753, 35.6844]).addTo(map);
             }
         })();
+    });
 
-        return () => {
-            map.remove();
-        };
+    onDestroy(() => {
+        map.remove();
     });
 </script>
 
