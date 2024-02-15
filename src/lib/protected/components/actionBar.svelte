@@ -1,8 +1,4 @@
 <script lang="ts">
-    import ArrowLeft from "$lib/core/components/images/arrowLeft.svelte";
-    import { page, navigating } from "$app/stores";
-    import { onMount } from "svelte";
-
     export let actionBar: HTMLElement;
 </script>
 
