@@ -17,7 +17,7 @@
 </script>
 
 <Base>
-    <button class="gap-2 aspect-square w-48 glass" style="background-color: {backgroundColor}; border-color: {borderColor};">
+    <button class="gap-2 aspect-square w-48 glass" style="background-color: {backgroundColor} / var(--tw-bg-opacity); border-color: {borderColor};">
         <div class="p-2 h-full text-center flex items-center justify-center snap-start overflow-hidden flex-col text-base font-semibold">
             <img class="w-full aspect-square" src={data.image} alt={data.name} />
             <p>{data.name}</p>

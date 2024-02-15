@@ -3,7 +3,7 @@
 </script>
 
 <SplideSlide>
-    <div class="w-fit h-fit snap-start shrink-0">
+    <div class="w-fit h-fit snap-start shrink-0 !bg-opacity-60">
         <slot />
     </div>
 </SplideSlide>

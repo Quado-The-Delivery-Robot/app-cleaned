@@ -17,7 +17,7 @@
 </script>
 
 <Base>
-    <button class="w-24 aspect-square p-2 glass" style="background-color: {backgroundColor}; border-color: {borderColor};">
-        <img class="w-full h-full p-2" src={data.image} alt={data.name} />
+    <button class="w-24 aspect-square !p-2 glass" style="background-color: {backgroundColor} / var(--tw-bg-opacity); border-color: {borderColor};">
+        <img class="w-full h-full" src={data.image} alt={data.name} />
     </button>
 </Base>
