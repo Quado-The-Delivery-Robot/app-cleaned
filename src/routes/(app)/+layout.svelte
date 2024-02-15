@@ -41,7 +41,7 @@
     <div class="w-screen flex flex-col flex-1 h-full relative">
         <Header bind:header />
 
-        <div class="pageViewport w-screen h-full overflow-x-hidden lg:w-full flex-1 flex" bind:this={viewportContainer}>
+        <div class="pageViewport w-screen h-full overflow-x-hidden lg:w-full ld:flex-1 flex" bind:this={viewportContainer}>
             <main class="w-screen px-7 h-fit lg:px-12 lg:w-full" bind:this={contentContainer}>
                 <slot />
             </main>
