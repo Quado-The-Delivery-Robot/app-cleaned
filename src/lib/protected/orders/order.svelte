@@ -32,6 +32,7 @@
 
                 // Show the current position of the robot.
                 new Marker({ color: "#FF0000" }).setLngLat([139.753, 35.6844]).addTo(map);
+                new Marker({ color: "#00FF00" }).setLngLat([139.753, 35.6844]).addTo(map);
             }
         })();
 
