@@ -7,13 +7,13 @@
 
     export let data: PageData;
     let hasOrders: boolean = false;
-    let inProgressOrders: order[] = [];
-    let orders: order[] = [];
+    let sections: { [key: string]: order[] } = {};
 
     onMount(() => {
         hasOrders = data.orders.length > 0;
-        inProgressOrders = data.orders.filter((order: order) => order.state !== "Delivered" && order.state !== "Not started");
-        orders = data.orders.filter((order: order) => order.state === "Delivered" || order.state === "Not started");
+        sections["In progress"] = data.orders.filter((order: order) => order.state !== "Delivered" && order.state !== "Not started");
+        sections["Waiting"] = data.orders.filter((order: order) => order.state !== "Not started");
+        sections["Completed"] = data.orders.filter((order: order) => order.state === "Delivered");
     });
 </script>
 
@@ -24,16 +24,12 @@
 {:then}
     <div class="flex-col flex gap-4 pb-6 [&>p]:text-left [&>p]:font-semibold [&>p]:text-lg [&>p]:text-primary-700">
         {#if hasOrders}
-            <p>In progress orders</p>
+            {#each Object.entries(sections) as [sectionName, orders]}
+                <p class={sectionName !== "In progress" ? "pt-6" : ""}>{sectionName}</p>
 
-            {#each inProgressOrders as order}
-                <Order {order} />
-            {/each}
-
-            <p class="mt-6">Other orders</p>
-
-            {#each orders as order}
-                <Order {order} />
+                {#each Object.values(orders) as order}
+                    <Order {order} />
+                {/each}
             {/each}
         {:else}
             <div class="flex flex-col gap-2 justify-center items-center">
