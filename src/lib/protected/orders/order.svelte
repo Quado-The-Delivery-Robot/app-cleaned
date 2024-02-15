@@ -1,6 +1,6 @@
 <script lang="ts">
     import "maplibre-gl/dist/maplibre-gl.css";
-    import { Map } from "maplibre-gl";
+    import { Map, NavigationControl, Marker } from "maplibre-gl";
     import { PUBLIC_MAPTILER_KEY } from "$env/static/public";
     import { formatDistanceToNow } from "date-fns";
     import { onMount } from "svelte";
@@ -27,6 +27,11 @@
                     center: [139.753, 35.6844],
                     zoom: 15,
                 });
+
+                map.addControl(new NavigationControl(), "top-right");
+
+                // Show the current position of the robot.
+                new Marker({ color: "#FF0000" }).setLngLat([139.753, 35.6844]).addTo(map);
             }
         })();
 
