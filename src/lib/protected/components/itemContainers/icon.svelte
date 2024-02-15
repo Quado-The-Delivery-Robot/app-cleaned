@@ -18,6 +18,6 @@
 
 <Base>
     <button class="w-24 aspect-square glass" style="background-color: {backgroundColor} / var(--tw-bg-opacity); border-color: {borderColor};">
-        <img class="w-full h-full" src={data.image} alt={data.name} />
+        <img class="w-full h-full p-2" src={data.image} alt={data.name} />
     </button>
 </Base>
