@@ -3,7 +3,7 @@
     import { Map, NavigationControl, Marker } from "maplibre-gl";
     import { PUBLIC_MAPTILER_KEY } from "$env/static/public";
     import { formatDistanceToNow } from "date-fns";
-    import { onDestroy, onMount } from "svelte";
+    import { onMount } from "svelte";
     import type { order } from "$lib/core/types";
 
     export let order: order;
