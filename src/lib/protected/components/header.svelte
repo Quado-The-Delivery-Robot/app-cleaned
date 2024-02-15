@@ -54,6 +54,10 @@
     });
 </script>
 
+<svelte:head>
+    <title>{pageName}</title>
+</svelte:head>
+
 <header class="onlyGlass border-b absolute top-0 left-0 w-full py-6 px-7 z-10 lg:px-12 flex {isHome ? 'justify-between' : 'justify-start'} items-center" bind:this={headerContainer}>
     {#if isHome}
         <div class="text-left">

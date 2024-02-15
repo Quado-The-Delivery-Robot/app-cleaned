@@ -4,10 +4,6 @@
     import HeightFix from "$lib/core/heightFix.svelte";
 </script>
 
-<svelte:head>
-    <title>Quado</title>
-</svelte:head>
-
 <HeightFix />
 
 <slot />
