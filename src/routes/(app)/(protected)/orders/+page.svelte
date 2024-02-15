@@ -27,13 +27,9 @@
             {#each Object.entries(sections) as [sectionName, orders]}
                 <p class={sectionName !== "In progress" ? "pt-6" : ""}>{sectionName}</p>
 
-                {#if orders.length > 0}
-                    {#each Object.values(orders) as order}
-                        <Order {order} />
-                    {/each}
-                {:else}
-                    <p class="text-base">No orders</p>
-                {/if}
+                {#each Object.values(orders) as order}
+                    <Order {order} />
+                {/each}
             {/each}
         {:else}
             <div class="flex flex-col gap-2 justify-center items-center">
