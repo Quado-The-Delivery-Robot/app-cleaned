@@ -15,7 +15,7 @@
     function updateViewport() {
         if (!isMounted) return;
 
-        viewportContainer.style.height = `calc(100vh - ${actionBar.clientHeight}px)`;
+        viewportContainer.style.height = `${window.innerHeight + actionBar.clientHeight}px`;
 
         const paddingBottom: string = window.getComputedStyle(header, null).getPropertyValue("padding-bottom");
         viewportContainer.style.paddingTop = `${header.clientHeight + parseInt(paddingBottom.match(/\d+/g)?.toString() || "0")}px`;
