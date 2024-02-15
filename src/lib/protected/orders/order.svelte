@@ -1,8 +1,32 @@
 <script lang="ts">
+    import "maplibre-gl/dist/maplibre-gl.css";
+    import { Map } from "maplibre-gl";
+    import { MAPTILER_KEY } from "$env/static/private";
     import { formatDistanceToNow } from "date-fns";
+    import { onMount } from "svelte";
     import type { order } from "$lib/core/types";
 
     export let order: order;
+    let map: Map;
+    let mapContainer: HTMLElement;
+    let inProgress: boolean = false;
+
+    onMount(() => {
+        inProgress = order.state !== "Delivered" && order.state !== "Not started";
+
+        if (inProgress) {
+            map = new Map({
+                container: mapContainer,
+                style: `https://api.maptiler.com/maps/streets-v2/style.json?key=${MAPTILER_KEY}`,
+                center: [139.753, 35.6844],
+                zoom: 15,
+            });
+        }
+
+        return () => {
+            map.remove();
+        };
+    });
 </script>
 
 <div class="glass p-5 text-left">
@@ -13,15 +37,27 @@
 
     <div class="flex gap-4 justify-start items-center text-primary-700 text-lg mb-2">
         <p class="font-medium flex justify-start items-center">
-            {#if order.state !== "Delivered" && order.state !== "Not started"}
+            {#if inProgress}
                 <div class="inProgressIndicator aspect-square h-2.5 bg-brand rounded-full mr-2" />
             {/if}
 
             {order.state}
         </p>
 
-        <p class="font-medium">{formatDistanceToNow(order.placed, { addSuffix: true })}</p>
+        {#if !inProgress}
+            <p class="font-medium">{formatDistanceToNow(order.placed, { addSuffix: true })}</p>
+        {/if}
     </div>
+
+    {#if inProgress}
+        <div class="relative aspect-[1.5/1] h-72">
+            <a href="https://www.maptiler.com" class="absolute left-2 right-2 z-10">
+                <img src="https://api.maptiler.com/resources/logo.svg" alt="MapTiler logo" />
+            </a>
+
+            <div class="absolute w-full h-full" bind:this={mapContainer} />
+        </div>
+    {/if}
 
     <p class="text-base text-primary-800 font-normal"></p>
 </div>
