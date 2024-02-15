@@ -22,7 +22,7 @@
 {#await data.orders}
     <p>Loading...</p>
 {:then}
-    <div class="flex-col flex gap-4 pb-6 [&>p]:text-lg [&>p]:text-primary-700">
+    <div class="flex-col flex gap-4 pb-6 [&>p]:text-left [&>p]:font-bold [&>p]:text-lg [&>p]:text-primary-700">
         {#if hasOrders}
             <p>In progress orders</p>
 
