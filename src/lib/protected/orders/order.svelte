@@ -51,7 +51,7 @@
 
     {#if inProgress}
         <div class="relative aspect-[1.5/1] h-72">
-            <a href="https://www.maptiler.com" class="absolute left-2 right-2 z-10">
+            <a href="https://www.maptiler.com" class="absolute left-2 bottom-2 z-10">
                 <img src="https://api.maptiler.com/resources/logo.svg" alt="MapTiler logo" />
             </a>
 
