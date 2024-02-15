@@ -18,10 +18,10 @@
 
 <Base>
     <button class="gap-2 aspect-square w-48 border rounded-lg" style="background-color: {backgroundColor}; border-color: {borderColor};">
-        <div class="p-2 flex items-center text-left justify-start snap-start overflow-hidden flex-col align-text-bottom">
-            <p class="text-base font-semibold w-full">{data.name}</p>
-            <p class=" text-base mr-2 font-semibold">{data.data.subName}</p>
-            <p class="text-sm">{data.data.description}</p>
+        <div class="p-2 h-full text-center flex items-center justify-start snap-start overflow-hidden flex-col align-text-bottom text-base font-semibold">
+            <p>{data.name}</p>
+            <p>{data.data.subName}</p>
+            <p class="text-sm font-normal">{data.data.description}</p>
         </div>
     </button>
 </Base>
