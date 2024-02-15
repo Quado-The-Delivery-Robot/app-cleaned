@@ -14,14 +14,21 @@
     onMount(() => {
         inProgress = order.state !== "Delivered" && order.state !== "Not started";
 
-        if (inProgress) {
-            map = new Map({
-                container: mapContainer,
-                style: `https://api.maptiler.com/maps/streets-v2/style.json?key=${PUBLIC_MAPTILER_KEY}`,
-                center: [139.753, 35.6844],
-                zoom: 15,
-            });
-        }
+        // Wrapping this prevents the main function from halting.
+        (async function () {
+            if (inProgress) {
+                while (mapContainer === undefined) {
+                    await new Promise((resolve) => setTimeout(resolve, 100));
+                }
+
+                map = new Map({
+                    container: mapContainer,
+                    style: `https://api.maptiler.com/maps/streets-v2/style.json?key=${PUBLIC_MAPTILER_KEY}`,
+                    center: [139.753, 35.6844],
+                    zoom: 15,
+                });
+            }
+        })();
 
         return () => {
             map.remove();
