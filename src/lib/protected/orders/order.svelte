@@ -1,7 +1,7 @@
 <script lang="ts">
     import "maplibre-gl/dist/maplibre-gl.css";
     import { Map } from "maplibre-gl";
-    import { MAPTILER_KEY } from "$env/static/private";
+    import { PUBLIC_MAPTILER_KEY } from "$env/static/public";
     import { formatDistanceToNow } from "date-fns";
     import { onMount } from "svelte";
     import type { order } from "$lib/core/types";
@@ -17,7 +17,7 @@
         if (inProgress) {
             map = new Map({
                 container: mapContainer,
-                style: `https://api.maptiler.com/maps/streets-v2/style.json?key=${MAPTILER_KEY}`,
+                style: `https://api.maptiler.com/maps/streets-v2/style.json?key=${PUBLIC_MAPTILER_KEY}`,
                 center: [139.753, 35.6844],
                 zoom: 15,
             });
