@@ -37,12 +37,14 @@
                 {:else if type === "spotlight"}
                     <SpotlightItemContainer
                         data={{
-                            colors: "colors" in item.data ? item.data.colors : ["#000000", "#000000", "#000000"],
+                            // For some items the colors are inserted after they are gotten from the database, so they could be in data.
+                            colors: item.colors ?? "colors" in item.data ? item.data.colors : ["#000000", "#000000", "#000000"],
                             name: item.name,
                             image: item.image,
                             id: itemID.toString(),
                             data: {
-                                subName: `$${item.price}`,
+                                subName: "price" in item ? `$${item.price}` : null,
+                                description: "description" in item ? item.description : null,
                             },
                         }}
                     />
