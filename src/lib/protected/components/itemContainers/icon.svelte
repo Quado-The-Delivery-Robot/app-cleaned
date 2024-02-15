@@ -17,7 +17,7 @@
 </script>
 
 <Base>
-    <button class="w-24 aspect-square rounded-lg p-2 border" style="background-color: {backgroundColor}; border-color: {borderColor};">
+    <button class="w-24 aspect-square p-2 glass" style="background-color: {backgroundColor}; border-color: {borderColor};">
         <img class="w-full h-full p-2" src={data.image} alt={data.name} />
     </button>
 </Base>
