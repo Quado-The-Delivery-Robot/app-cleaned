@@ -7,22 +7,31 @@
     import { navigating } from "$app/stores";
 
     let headerContainer: HTMLElement;
+    let actionBar: HTMLElement;
     let viewportContainer: HTMLDivElement;
     let contentContainer: HTMLElement;
     let isMounted: boolean = false;
 
-    function updatePadding() {
+    function updateViewport() {
         if (!isMounted) return;
+
+        viewportContainer.style.height = `calc(100vh - ${actionBar.clientHeight}px)`;
 
         const paddingBottom: string = window.getComputedStyle(headerContainer, null).getPropertyValue("padding-bottom");
         viewportContainer.style.paddingTop = `${headerContainer.clientHeight + parseInt(paddingBottom.match(/\d+/g)?.toString() || "0")}px`;
     }
 
-    $: if ($navigating === null) updatePadding();
+    $: if ($navigating === null) updateViewport();
 
     onMount(() => {
         isMounted = true;
-        updatePadding();
+        updateViewport();
+
+        window.addEventListener("resize", updateViewport);
+
+        return () => {
+            window.removeEventListener("resize", updateViewport);
+        };
     });
 </script>
 
