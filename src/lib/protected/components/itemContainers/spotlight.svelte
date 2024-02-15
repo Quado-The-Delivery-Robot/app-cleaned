@@ -26,7 +26,7 @@
 
 <Base>
     <button class="gap-2 aspect-square min-w-48 glass text-center flex items-center justify-center flex-col font-semibold" style="background-color: rgba({backgroundColor}, var(--tw-bg-opacity)); border-color: {borderColor};">
-        <img class="aspect-square" src={data.image} alt={data.name} />
+        <img class="w-24 aspect-square" src={data.image} alt={data.name} />
         <p class="font medium">{data.name}</p>
         <p>{data.data.subName}</p>
         <p class="text-sm font-normal">{data.data.description}</p>
