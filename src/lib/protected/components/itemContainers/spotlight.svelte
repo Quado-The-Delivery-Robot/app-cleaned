@@ -14,12 +14,12 @@
             borderColor = shadeColor(backgroundColor, -50);
         }
 
-        if (data.data.name.length > 37) {
-            data.data.name.value = `${data.data.name.value.slice(0, 37)}...`;
+        if (data.name.length > 37) {
+            data.name = `${data.name.slice(0, 37)}...`;
         }
 
         if (data.data.description.length > 47) {
-            data.data.description.value = `${data.data.description.value.slice(0, 37)}...`;
+            data.data.description = `${data.data.description.slice(0, 37)}...`;
         }
     });
 </script>
