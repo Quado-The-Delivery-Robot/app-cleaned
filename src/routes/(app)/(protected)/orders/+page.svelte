@@ -12,7 +12,7 @@
     onMount(() => {
         hasOrders = data.orders.length > 0;
         sections["In progress"] = data.orders.filter((order: order) => order.state !== "Delivered" && order.state !== "Not started");
-        sections["Waiting"] = data.orders.filter((order: order) => order.state !== "Not started");
+        sections["Waiting"] = data.orders.filter((order: order) => order.state === "Not started");
         sections["Completed"] = data.orders.filter((order: order) => order.state === "Delivered");
     });
 </script>
@@ -27,9 +27,13 @@
             {#each Object.entries(sections) as [sectionName, orders]}
                 <p class={sectionName !== "In progress" ? "pt-6" : ""}>{sectionName}</p>
 
-                {#each Object.values(orders) as order}
-                    <Order {order} />
-                {/each}
+                {#if orders.length > 0}
+                    {#each Object.values(orders) as order}
+                        <Order {order} />
+                    {/each}
+                {:else}
+                    <p class="text-base">No orders</p>
+                {/if}
             {/each}
         {:else}
             <div class="flex flex-col gap-2 justify-center items-center">
