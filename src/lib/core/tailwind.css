@@ -280,13 +280,4 @@
     input.glass {
         @apply rounded-full;
     }
-
-    .glass.noHover {
-        @apply transition-none;
-    }
-
-    button.glass.noHover,
-    a.glass.noHover {
-        @apply translate-y-0;
-    }
 }
