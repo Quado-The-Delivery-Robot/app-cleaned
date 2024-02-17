@@ -17,8 +17,8 @@
     });
 </script>
 
-<Base>
-    <button class="w-24 aspect-square onlyGlass" style="background-color: rgba({hexToRgb(backgroundColor)}, var(--tw-bg-opacity)); border-color: {borderColor};">
+<Base {data}>
+    <div class="w-24 aspect-square onlyGlass" style="background-color: rgba({hexToRgb(backgroundColor)}, var(--tw-bg-opacity)); border-color: {borderColor};">
         <img class="w-full aspect-square p-2" src={data.image} alt={data.name} />
-    </button>
+    </div>
 </Base>

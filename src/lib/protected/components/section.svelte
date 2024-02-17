@@ -2,12 +2,18 @@
     import { Splide } from "@splidejs/svelte-splide";
     import IconItemContainer from "./itemContainers/icon.svelte";
     import SpotlightItemContainer from "./itemContainers/spotlight.svelte";
-    import type { sectionItem, sectionType } from "$lib/core/types";
+    import type { itemType, sectionItem, sectionType } from "$lib/core/types";
 
     export let hasHeader: boolean;
     export let name: string;
     export let items: sectionItem[];
-    export let type: sectionType;
+    export let sectionType: sectionType;
+    export let itemType: itemType;
+
+    function getColorsFromItem(item: sectionItem): string[] {
+        // For some items the colors are inserted after they are gotten from the database, so they could be in data.
+        return item.colors ?? "colors" in item.data ? item.data.colors : ["#000000", "#000000", "#000000"];
+    }
 </script>
 
 <div class="w-full">
@@ -32,16 +38,25 @@
             }}
         >
             {#each items as item, itemID}
-                {#if type === "icon"}
-                    <IconItemContainer data={item} />
-                {:else if type === "spotlight"}
-                    <SpotlightItemContainer
+                {#if sectionType === "icon"}
+                    <IconItemContainer
                         data={{
-                            // For some items the colors are inserted after they are gotten from the database, so they could be in data.
-                            colors: item.colors ?? "colors" in item.data ? item.data.colors : ["#000000", "#000000", "#000000"],
+                            colors: getColorsFromItem(item),
                             name: item.name,
                             image: item.image,
                             id: itemID.toString(),
+                            type: itemType,
+                            data: {},
+                        }}
+                    />
+                {:else if sectionType === "spotlight"}
+                    <SpotlightItemContainer
+                        data={{
+                            colors: getColorsFromItem(item),
+                            name: item.name,
+                            image: item.image,
+                            id: itemID.toString(),
+                            type: itemType,
                             data: {
                                 subName: "price" in item ? `$${item.price}` : null,
                                 description: "description" in item ? item.description : null,

@@ -34,6 +34,8 @@ export type restaurant = {
 
 export type sectionType = "icon" | "spotlight";
 
+export type itemType = "restaurant" | "item";
+
 export type sectionItem = {
     [x: string]: any;
     name: string;
@@ -41,4 +43,5 @@ export type sectionItem = {
     image: string;
     id: string;
     data: any;
+    type: itemType;
 };
