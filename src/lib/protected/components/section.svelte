@@ -12,7 +12,13 @@
 
     function getColorsFromItem(item: sectionItem): string[] {
         // For some items the colors are inserted after they are gotten from the database, so they could be in data.
-        return item.colors ?? "colors" in item.data ? item.data.colors : ["#000000", "#000000", "#000000"];
+        if ("colors" in item && typeof item.colors !== null) {
+            return item.colors!;
+        } else if ("colors" in item.data) {
+            return item.data.colors;
+        } else {
+            return ["#000000", "#000000", "#000000"];
+        }
     }
 </script>
 
