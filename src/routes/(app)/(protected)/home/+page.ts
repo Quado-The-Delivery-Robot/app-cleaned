@@ -1,10 +1,11 @@
 import { PUBLIC_ENDPOINT } from "$env/static/public";
 import type { PageLoad } from "./$types";
-import type { sectionType } from "$lib/core/types";
+import type { itemType, sectionType } from "$lib/core/types";
 
 type section = {
     name: string;
-    type: sectionType;
+    sectionType: sectionType;
+    itemType: itemType;
     endpoint: string;
     hasHeader: boolean;
 };
@@ -12,29 +13,32 @@ type section = {
 const sections: section[] = [
     {
         name: "Recommended",
-        type: "spotlight",
+        sectionType: "spotlight",
+        itemType: "item",
         endpoint: "v1/items/recommended",
         hasHeader: false,
     },
     {
         name: "New to you",
-        type: "icon",
+        sectionType: "icon",
+        itemType: "restaurant",
         endpoint: "v1/restaurants/recommended",
         hasHeader: true,
     },
     {
         name: "Popular",
-        type: "icon",
+        sectionType: "icon",
+        itemType: "restaurant",
         endpoint: "v1/restaurants/recommended",
         hasHeader: true,
     },
 ];
 
 export const load: PageLoad = async ({ fetch }) => {
-    const feed: { name: string; hasHeader: boolean; type: sectionType; data: any[] }[] = [];
+    const feed: { name: string; hasHeader: boolean; sectionType: sectionType; itemType: itemType; data: any[] }[] = [];
 
     for (let index = 0; index < sections.length; index++) {
-        const { name, type, endpoint, hasHeader }: section = sections[index];
+        const { name, sectionType, itemType, endpoint, hasHeader }: section = sections[index];
         const result = await fetch(`${PUBLIC_ENDPOINT}/${endpoint}`, {
             credentials: "include",
         });
@@ -42,7 +46,8 @@ export const load: PageLoad = async ({ fetch }) => {
 
         feed.push({
             name,
-            type,
+            sectionType,
+            itemType,
             hasHeader,
             data,
         });
