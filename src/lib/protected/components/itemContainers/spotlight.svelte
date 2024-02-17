@@ -26,7 +26,7 @@
 </script>
 
 <Base {data}>
-    <div class="gap-2 aspect-square min-w-40 onlyGlass relative text-center font-semibold" style="background-color: rgba({hexToRgb(backgroundColor)}, var(--tw-bg-opacity)); border-color: {borderColor};">
+    <div class="gap-2 aspect-square w-60 onlyGlass relative text-center font-semibold" style="background-color: rgba({hexToRgb(backgroundColor)}, var(--tw-bg-opacity)); border-color: {borderColor};">
         <img class="w-32 aspect-square absolute left-1/2 -translate-x-1/2 bottom-1/2" src={data.image} alt={data.name} />
 
         <div class="w-full h-full absolute left-1/2 -translate-x-1/2 top-1/2">
