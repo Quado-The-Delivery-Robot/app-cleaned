@@ -26,10 +26,13 @@
 </script>
 
 <Base>
-    <button class="gap-2 aspect-square min-w-48 onlyGlass text-center flex items-center justify-center flex-col font-semibold" style="background-color: rgba({hexToRgb(backgroundColor)}, var(--tw-bg-opacity)); border-color: {borderColor};">
-        <img class="w-24 aspect-square" src={data.image} alt={data.name} />
-        <p class="font medium">{data.name}</p>
-        <p>{data.data.subName}</p>
-        <p class="text-sm font-normal">{data.data.description}</p>
+    <button class="gap-2 aspect-square min-w-40 onlyGlass relative text-center font-semibold" style="background-color: rgba({hexToRgb(backgroundColor)}, var(--tw-bg-opacity)); border-color: {borderColor};">
+        <img class="w-32 aspect-square absolute left-1/2 -translate-x-1/2 bottom-1/2" src={data.image} alt={data.name} />
+
+        <div class="w-full h-full absolute left-1/2 -translate-x-1/2 top-1/2">
+            <p class="font-semibold">{data.name}</p>
+            <p>{data.data.subName}</p>
+            <p class="text-sm font-normal max-w-26 mt-5">{data.data.description}</p>
+        </div>
     </button>
 </Base>
