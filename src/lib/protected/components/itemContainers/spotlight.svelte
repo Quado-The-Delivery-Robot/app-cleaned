@@ -31,7 +31,7 @@
             <img class="h-full aspect-square" src={data.image} alt={data.name} />
         </div>
 
-        <div class="w-full h-1/3 pt-2 flex flex-col justify-center items-center">
+        <div class="w-full h-1/3 pt-2 flex flex-col justify-center items-center [&>p]:w-full">
             <p class="font-semibold">{data.name}</p>
             <p class="text-sm font-normal max-w-[80%] mt-1">{data.data.subName} | {data.data.description}</p>
         </div>
