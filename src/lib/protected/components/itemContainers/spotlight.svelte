@@ -33,7 +33,7 @@
 
         <div class="w-full h-1/3 absolute mt-2 pt-1 flex flex-col justify-center items-center">
             <p class="font-semibold">{data.name}</p>
-            <p class="text-sm font-normal max-w-[80%] mt-2">{data.data.subName} | {data.data.description}</p>
+            <p class="text-sm font-normal max-w-[80%] mt-1">{data.data.subName} | {data.data.description}</p>
         </div>
     </div>
 </Base>
