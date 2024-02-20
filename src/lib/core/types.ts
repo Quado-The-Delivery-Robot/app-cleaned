@@ -45,3 +45,10 @@ export type sectionItem = {
     data: any;
     type: itemType;
 };
+
+export type cartItem = number;
+
+export type cart = {
+    restaurant: string;
+    items: cartItem[];
+};
