@@ -20,6 +20,14 @@
             return ["#000000", "#000000", "#000000"];
         }
     }
+
+    function getIDFromItem(item: sectionItem, index: number): string {
+        if ("id" in item) {
+            return item.id;
+        } else {
+            return index.toString();
+        }
+    }
 </script>
 
 <div class="w-full">
@@ -43,14 +51,14 @@
                 omitEnd: true,
             }}
         >
-            {#each items as item, itemID}
+            {#each items as item, index}
                 {#if sectionType === "icon"}
                     <IconItemContainer
                         data={{
                             colors: getColorsFromItem(item),
                             name: item.name,
                             image: item.image,
-                            id: itemID.toString(),
+                            id: getIDFromItem(item, index),
                             type: itemType,
                             data: {},
                         }}
@@ -61,7 +69,7 @@
                             colors: getColorsFromItem(item),
                             name: item.name,
                             image: item.image,
-                            id: itemID.toString(),
+                            id: getIDFromItem(item, index),
                             type: itemType,
                             data: {
                                 subName: "price" in item ? `$${item.price}` : null,
