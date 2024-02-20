@@ -7,7 +7,7 @@
 
     function click() {
         if (data.type === "restaurant") {
-            goto(`/restaurant/${data.name}`);
+            goto(`/restaurant/${data.id}`);
         } else if (data.type === "item") {
         }
     }
