@@ -17,5 +17,5 @@
 {#await data.restaurant}
     <p>Loading...</p>
 {:then}
-    <p>{data.restaurant.description}</p>
+    <p>{data.restaurant.description}{Section}</p>
 {/await}
