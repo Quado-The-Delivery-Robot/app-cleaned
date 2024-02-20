@@ -7,4 +7,10 @@
 
 <Title>Cart</Title>
 
-{data.carts}
+{#await data.carts}
+    <p>Loading...</p>
+{:then}
+    {#each Object.values(data.carts) as cart}
+        <p>{cart.restaurant}</p>
+    {/each}
+{/await}
