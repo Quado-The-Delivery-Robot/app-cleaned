@@ -14,12 +14,18 @@
 
 <Title>{restaurantName}</Title>
 
-{#await data.restaurant}
-    <p>Loading...</p>
-{:then}
-    <p>{data.restaurant.description}</p>
+<div class="flex flex-col gap-6 justify-start items-start">
+    {#await data.restaurant}
+        <p>Loading...</p>
+    {:then}
+        <p>{data.restaurant.description}</p>
 
-    {#each Object.values(data.feed) as section}
-        <Section name={section.name} hasHeader={section.hasHeader} items={section.data} sectionType={section.sectionType} itemType={section.itemType} />
-    {/each}
-{/await}
+        {#await data.feed}
+            <p>Loading...</p>
+        {:then}
+            {#each Object.values(data.feed) as section}
+                <Section name={section.name} hasHeader={section.hasHeader} items={section.data} sectionType={section.sectionType} itemType={section.itemType} />
+            {/each}
+        {/await}
+    {/await}
+</div>
