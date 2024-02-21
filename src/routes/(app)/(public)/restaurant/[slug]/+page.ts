@@ -16,21 +16,21 @@ const sections: section[] = [
         name: "Recommended",
         sectionType: "spotlight",
         itemType: "item",
-        endpoint: "v1/items/recommended",
+        endpoint: "v1/items/recommended/",
         hasHeader: false,
     },
     {
         name: "New to you",
         sectionType: "icon",
         itemType: "restaurant",
-        endpoint: "v1/restaurants/recommended",
+        endpoint: "v1/items/recommended/",
         hasHeader: true,
     },
     {
         name: "Popular",
         sectionType: "icon",
         itemType: "restaurant",
-        endpoint: "v1/restaurants/recommended",
+        endpoint: "v1/items/recommended/",
         hasHeader: true,
     },
 ];
@@ -44,7 +44,7 @@ export const load: PageLoad = async ({ fetch, params }) => {
 
     for (let index = 0; index < sections.length; index++) {
         const { name, sectionType, itemType, endpoint, hasHeader }: section = sections[index];
-        const result = await fetch(`${PUBLIC_ENDPOINT}/${endpoint}`, {
+        const result = await fetch(`${PUBLIC_ENDPOINT}/${endpoint}${restaurant.id}`, {
             credentials: "include",
         });
         const { data } = await result.json();
