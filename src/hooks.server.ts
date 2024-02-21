@@ -7,7 +7,7 @@ import type { Handle } from "@sveltejs/kit";
 
 export const handle: Handle = SvelteKitAuth({
     providers: [GoogleProvider({ clientId: GOOGLE_CLIENT_ID, clientSecret: GOOGLE_SECERT, redirectProxyUrl: "https://www.quadoapp.com/auth" })],
-    adapter: MongoDBAdapter(database, { databaseName: "app" }),
+    adapter: MongoDBAdapter(database, { databaseName: "accounts" }),
     pages: {
         signIn: "/login",
     },
