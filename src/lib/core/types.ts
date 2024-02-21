@@ -32,7 +32,7 @@ export type restaurant = {
     description: string;
 };
 
-export type sectionType = "icon" | "spotlight";
+export type sectionType = "icon" | "spotlight" | "info";
 
 export type itemType = "restaurant" | "item";
 
