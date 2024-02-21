@@ -14,7 +14,7 @@
         // For some items the colors are inserted after they are gotten from the database, so they could be in data.
         if ("colors" in item && typeof item.colors !== null) {
             return item.colors!;
-        } else if ("colors" in item.data) {
+        } else if ("data" in item && "colors" in item.data) {
             return item.data.colors;
         } else {
             return ["#000000", "#000000", "#000000"];
