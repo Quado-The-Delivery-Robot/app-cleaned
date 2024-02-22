@@ -58,7 +58,7 @@
     <title>{pageName}</title>
 </svelte:head>
 
-<header class="onlyGlass border-b absolute top-0 left-0 w-full py-6 px-7 z-10 lg:px-12 flex {isHome ? 'justify-between' : 'justify-start'} items-center" bind:this={header}>
+<header class="onlyGlass border-b-0 lg:border-b absolute top-0 left-0 w-full py-6 px-7 z-10 lg:px-12 flex {isHome ? 'justify-between' : 'justify-start'} items-center" bind:this={header}>
     {#if isHome}
         <div class="text-left">
             <p class="text-lg font-semibold">Quado</p>
