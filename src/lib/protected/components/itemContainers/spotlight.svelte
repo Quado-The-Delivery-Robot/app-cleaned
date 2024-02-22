@@ -5,8 +5,8 @@
     import type { sectionItem } from "$lib/core/types";
 
     export let data: sectionItem;
-    let backgroundColor: string;
-    let borderColor: string;
+    let backgroundColor: string = "#000000";
+    let borderColor: string = "#000000";
 
     onMount(() => {
         if (data.name.length > 37) {
