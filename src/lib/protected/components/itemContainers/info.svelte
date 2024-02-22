@@ -1,6 +1,5 @@
 <script lang="ts">
     import Base from "./base.svelte";
-
     import shadeColor from "$lib/protected/shadeColor";
     import hexToRgb from "$lib/protected/hexToRGB";
     import type { sectionItem } from "$lib/core/types";
@@ -19,7 +18,13 @@
 </script>
 
 <Base {data}>
-    <div class=" w-32 aspect-square onlyGlass" style="background-color: rgba({hexToRgb(backgroundColor)}, var(--tw-bg-opacity)); border-color: {borderColor};">
-        <img class="w-full aspect-square p-2" src={data.image} alt={data.name} />
+    <div class="text-center flex flex-col justify-center items-center">
+        <div class=" w-32 aspect-square onlyGlass" style="background-color: rgba({hexToRgb(backgroundColor)}, var(--tw-bg-opacity)); border-color: {borderColor};">
+            <img class="w-full aspect-square p-2" src={data.image} alt={data.name} />
+        </div>
+        <div class="justify-between items-center">
+            <p class=" w-full">{data.name}</p>
+            <p>{data.data.subName}</p>
+        </div>
     </div>
 </Base>
