@@ -18,13 +18,11 @@
 </script>
 
 <Base {data}>
-    <div class="text-center flex flex-col justify-center items-center">
-        <div class=" w-32 aspect-square onlyGlass" style="background-color: rgba({hexToRgb(backgroundColor)}, var(--tw-bg-opacity)); border-color: {borderColor};">
-            <img class="w-full aspect-square p-2" src={data.image} alt={data.name} />
-        </div>
-        <div class="justify-between items-center">
-            <p class=" w-full">{data.name}</p>
-            <p>{data.data.subName}</p>
-        </div>
+    <div class=" w-32 aspect-square onlyGlass" style="background-color: rgba({hexToRgb(backgroundColor)}, var(--tw-bg-opacity)); border-color: {borderColor};">
+        <img class="w-full aspect-square p-2" src={data.image} alt={data.name} />
+    </div>
+    <div class="w-full justify-between items-center">
+        <p>{data.name}</p>
+        <p>{data.data.subName}</p>
     </div>
 </Base>
