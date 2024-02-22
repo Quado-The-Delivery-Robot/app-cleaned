@@ -12,11 +12,7 @@
     <div class=" w-32 aspect-square onlyGlass" style="background-color: rgba({hexToRgb(backgroundColor)}, var(--tw-bg-opacity)); border-color: {borderColor};">
         <div class="w-full flex justify-center items-center">
             <img class="w-full aspect-square" src={data.image} alt={data.name} />
-        </div>
-
-        <div class="w-full justify-between items-center">
-            <p>{data.name}</p>
-            <p>{data.data.subName}</p>
+            <p class="text-sm">{data.name} <span>{data.data.subName}</span></p>
         </div>
     </div>
 </Base>
