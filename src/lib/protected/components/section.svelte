@@ -2,6 +2,7 @@
     import { Splide } from "@splidejs/svelte-splide";
     import IconItemContainer from "./itemContainers/icon.svelte";
     import SpotlightItemContainer from "./itemContainers/spotlight.svelte";
+    import InfoItemCotainer from "./itemContainers/info.svelte";
     import type { itemType, sectionItem, sectionType } from "$lib/core/types";
 
     export let hasHeader: boolean;
@@ -65,6 +66,20 @@
                     />
                 {:else if sectionType === "spotlight"}
                     <SpotlightItemContainer
+                        data={{
+                            colors: getColorsFromItem(item),
+                            name: item.name,
+                            image: item.image,
+                            id: getIDFromItem(item, index),
+                            type: itemType,
+                            data: {
+                                subName: "price" in item ? `$${item.price}` : null,
+                                description: "description" in item ? item.description : null,
+                            },
+                        }}
+                    />
+                {:else if sectionType === "info"}
+                    <InfoItemCotainer
                         data={{
                             colors: getColorsFromItem(item),
                             name: item.name,
