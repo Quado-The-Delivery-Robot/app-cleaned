@@ -66,10 +66,6 @@
 
     {#if inProgress}
         <div class="relative aspect-[1.5/1] w-full sm:w-auto sm:h-72 overflow-hidden rounded-lg">
-            <a href="https://www.maptiler.com" class="absolute left-[10px] bottom-[10px] z-10">
-                <img src="https://api.maptiler.com/resources/logo.svg" alt="MapTiler logo" />
-            </a>
-
             <div class="absolute w-full h-full" bind:this={mapContainer} />
         </div>
     {/if}
