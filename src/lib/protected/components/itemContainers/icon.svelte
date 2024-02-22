@@ -1,23 +1,14 @@
 <script lang="ts">
     import Base from "./base.svelte";
-    import { onMount } from "svelte";
-    import shadeColor from "$lib/protected/shadeColor";
     import hexToRgb from "$lib/protected/hexToRGB";
     import type { sectionItem } from "$lib/core/types";
 
     export let data: sectionItem;
-    let backgroundColor: string = "#000000";
-    let borderColor: string = "#000000";
-
-    onMount(() => {
-        if ("colors" in data) {
-            backgroundColor = (data as any).colors[0];
-            borderColor = shadeColor(backgroundColor, -50);
-        }
-    });
+    let backgroundColor: string;
+    let borderColor: string;
 </script>
 
-<Base {data}>
+<Base {data} bind:backgroundColor bind:borderColor>
     <div class="w-24 aspect-square onlyGlass" style="background-color: rgba({hexToRgb(backgroundColor)}, var(--tw-bg-opacity)); border-color: {borderColor};">
         <img class="w-full aspect-square p-2" src={data.image} alt={data.name} />
     </div>
