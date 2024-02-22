@@ -9,7 +9,7 @@
 </script>
 
 <Base {data} bind:backgroundColor bind:borderColor>
-    <div class=" w-36 aspect-square onlyGlass" style="background-color: rgba({hexToRgb(backgroundColor)}, var(--tw-bg-opacity)); border-color: {borderColor};">
+    <div class=" w-36 onlyGlass" style="background-color: rgba({hexToRgb(backgroundColor)}, var(--tw-bg-opacity)); border-color: {borderColor};">
         <div class="w-full flex justify-center items-center gap-2">
             <img class="w-full aspect-square" src={data.image} alt={data.name} />
             <p class="text-sm ml-2">{data.name} <span>{data.data.subName}</span></p>
