@@ -89,7 +89,7 @@
                             data: {
                                 subName: "price" in item ? `$${item.price}` : null,
                                 description: "description" in item ? item.description : null,
-                                calories: "calories" in item ? `$${item.calories}` : null,
+                                calories: "calories" in item ? item.calories : null,
                             },
                         }}
                     />
