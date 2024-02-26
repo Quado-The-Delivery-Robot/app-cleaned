@@ -12,8 +12,11 @@
     <div class=" w-60 onlyGlass" style="background-color: rgba({hexToRgb(backgroundColor)}, var(--tw-bg-opacity)); border-color: {borderColor};">
         <div class="w-full flex justify-center items-center gap-2">
             <img class="w-14 h-14 aspect-square" src={data.image} alt={data.name} />
-            <p class="text-sm">{data.name}</p>
-            <p class="text-sm">{data.data.subName} | {data.data.calories} calories</p>
+
+            <div class="flex flex-col justify-center items-start w-full">
+                <p class="text-sm">{data.name}</p>
+                <p class="text-sm">{data.data.subName} | {data.data.calories} calories</p>
+            </div>
         </div>
     </div>
 </Base>
