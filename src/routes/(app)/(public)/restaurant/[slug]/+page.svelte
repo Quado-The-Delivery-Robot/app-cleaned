@@ -18,10 +18,6 @@
     {#await data.restaurant && data.feed}
         <p>Loading...</p>
     {:then}
-        {#each Object.values(data.feed) as section}
-            <Section name={section.name} hasHeader={section.hasHeader} items={section.data} sectionType={section.sectionType} itemType={section.itemType} />
-        {/each}
-
         <p>{data.restaurant.description}</p>
 
         <p class="flex gap-0.5 text-lg">
@@ -30,5 +26,9 @@
             </svg>
             4.9
         </p>
+
+        {#each Object.values(data.feed) as section}
+            <Section name={section.name} hasHeader={section.hasHeader} items={section.data} sectionType={section.sectionType} itemType={section.itemType} />
+        {/each}
     {/await}
 </div>
