@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { get } from "svelte/store";
-    import { background as backgroundStore, type background } from "$lib/stores/app";
+    import { background as backgroundStore, background } from "$lib/stores/app";
 
     export let viewportContainer: HTMLDivElement;
     let backgroundElement: HTMLElement;
@@ -11,7 +11,7 @@
         if (scrollTicking) return;
 
         window.requestAnimationFrame(() => {
-            backgroundElement.style.backgroundPosition = `0% ${(viewportContainer.scrollTop / backgroundElement.clientHeight) * 100}%`;
+            backgroundElement.style.backgroundPosition = `0% ${Math.min((viewportContainer.scrollTop / backgroundElement.clientHeight) * 100, 200)}%`;
             scrollTicking = false;
         });
 
