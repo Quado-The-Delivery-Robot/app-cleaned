@@ -28,7 +28,7 @@
     {:then}
         <Rating rating={2.7} />
 
-        <div class=" w-full text-sm font-semibold align-top text-right">{data.restaurant.location}</div>
+        <div class=" w-full text-sm font-semibold text-right">{data.restaurant.location}</div>
         <p>{data.restaurant.description}</p>
 
         {#each Object.values(data.feed) as section}
