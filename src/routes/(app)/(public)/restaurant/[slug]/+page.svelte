@@ -22,13 +22,13 @@
 
 <Title>{restaurantName}</Title>
 
-<div class="flex flex-col gap-6 justify-start items-start relative">
+<div class="flex flex-col gap-6 justify-start items-start">
     {#await data.restaurant && data.feed}
         <p>Loading...</p>
     {:then}
         <Rating rating={2.7} />
 
-        <div class=" text-sm font-semibold top-2 right-2">{data.restaurant.location}</div>
+        <p class=" text-sm font-semibold">{data.restaurant.location}</p>
         <p>{data.restaurant.description}</p>
 
         {#each Object.values(data.feed) as section}
