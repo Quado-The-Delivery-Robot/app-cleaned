@@ -2,7 +2,7 @@
     export let rating: number = 0;
 </script>
 
-<div class="text-lg flex gap-0.5 items-center justify-start">
+<div class="text-lg flex gap-1 items-center justify-start">
     <div class="w-full relative">
         {#each Array(2) as _, index}
             <div class="flex gap-0.5 overflow-hidden {index == 1 ? 'absolute top-0 left-0' : ''}" style="width: {index == 1 ? (rating / 5) * 100 : 100}%;">
@@ -15,5 +15,5 @@
         {/each}
     </div>
 
-    <p class="font-semibold">4.9</p>
+    <p class="font-semibold">{rating}</p>
 </div>
