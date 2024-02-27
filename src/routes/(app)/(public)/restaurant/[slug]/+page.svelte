@@ -3,6 +3,8 @@
     import Section from "$lib/protected/components/section.svelte";
     import Rating from "$lib/public/restaurant/rating.svelte";
     import { onMount } from "svelte";
+    import shadeColor from "$lib/protected/shadeColor";
+    import { background } from "$lib/stores/app";
     import type { PageData } from "./$types";
 
     export let data: PageData;
@@ -10,6 +12,11 @@
 
     onMount(() => {
         restaurantName = data.restaurant.name;
+
+        background.set({
+            from: shadeColor(data.restaurant.colors[0], -50),
+            to: "#000000",
+        });
     });
 </script>
 
