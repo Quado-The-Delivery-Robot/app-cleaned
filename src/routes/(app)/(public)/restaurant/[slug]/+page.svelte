@@ -22,6 +22,7 @@
         <Rating rating={2.7} />
 
         <p>{data.restaurant.description}</p>
+        <p>{data.restaurant.location}</p>
 
         {#each Object.values(data.feed) as section}
             <Section name={section.name} hasHeader={section.hasHeader} items={section.data} sectionType={section.sectionType} itemType={section.itemType} />

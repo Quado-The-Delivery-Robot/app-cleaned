@@ -30,6 +30,7 @@ export type restaurant = {
     id: string;
     items: any;
     description: string;
+    location: string;
 };
 
 export type sectionType = "icon" | "spotlight" | "info";
