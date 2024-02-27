@@ -19,8 +19,8 @@
     {#await data.restaurant && data.feed}
         <p>Loading...</p>
     {:then}
-        <div class="text-lg relative flex gap-0.5 items-center justify-start">
-            <div class="w-full">
+        <div class="text-lg flex gap-0.5 items-center justify-start">
+            <div class="w-full relative">
                 {#each Array(2) as _, index}
                     <div class="flex gap-0.5 overflow-hidden {index == 1 ? 'absolute top-0 left-0' : ''}" style="width: {index == 1 ? (index / 5) * 100 : 100}%;">
                         {#each Array(5) as _index}
