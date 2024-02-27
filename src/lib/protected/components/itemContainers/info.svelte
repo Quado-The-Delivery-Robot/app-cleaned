@@ -13,7 +13,7 @@
         <div class="w-full flex justify-center items-center gap-2">
             <img class="w-14 h-14 aspect-square" src={data.image} alt={data.name} />
 
-            <div class="flex flex-col justify-center items-start w-full">
+            <div class="flex flex-col justify-center items-start w-full text-left">
                 <p class="font-semibold">{data.name}</p>
                 <p class="text-sm">{data.data.subName} | {data.data.calories} calories</p>
             </div>
