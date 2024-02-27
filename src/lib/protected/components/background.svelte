@@ -35,7 +35,8 @@
 </script>
 
 <style lang="postcss">
-    body {
+    :global(body) {
         background-size: 100% 200%;
+        @apply bg-gradient-to-b from-backgroundSecondary to-background bg-no-repeat;
     }
 </style>

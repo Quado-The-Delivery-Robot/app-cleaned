@@ -69,10 +69,6 @@
 </div>
 
 <style lang="postcss">
-    :global(body) {
-        @apply bg-gradient-to-b from-backgroundSecondary to-background bg-no-repeat;
-    }
-
     .pageViewport {
         -ms-overflow-style: none;
         scrollbar-width: none;
