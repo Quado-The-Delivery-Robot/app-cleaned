@@ -11,7 +11,7 @@
         if (scrollTicking) return;
 
         window.requestAnimationFrame(() => {
-            backgroundElement.style.backgroundPosition = `0% ${Math.min((viewportContainer.scrollTop / backgroundElement.clientHeight) * 100, 200)}%`;
+            backgroundElement.style.backgroundPosition = `0% ${Math.min((viewportContainer.scrollTop / backgroundElement.clientHeight) * 100, 100)}%`;
             scrollTicking = false;
         });
 
