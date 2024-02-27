@@ -11,6 +11,7 @@
     let viewportContainer: HTMLDivElement;
     let contentContainer: HTMLElement;
     let isMounted: boolean = false;
+    let updateBackgroundPosition: () => never;
 
     function updateViewport() {
         if (!isMounted) return;
@@ -35,13 +36,13 @@
     });
 </script>
 
-<Background />
+<Background {viewportContainer} bind:updatePosition={updateBackgroundPosition} />
 
 <div class="w-screen h-screen overflow-hidden flex flex-col lg:flex-row-reverse justify-center items-center">
     <div class="w-screen flex flex-col flex-1 h-full relative">
         <Header bind:header />
 
-        <div class="pageViewport w-screen h-full overflow-x-hidden lg:w-full lg:flex-1 flex" bind:this={viewportContainer}>
+        <div class="pageViewport w-screen h-full overflow-x-hidden lg:w-full lg:flex-1 flex" bind:this={viewportContainer} on:scroll={updateBackgroundPosition}>
             <main class="w-screen px-7 pb-4 h-fit lg:pb-0 lg:px-12 lg:w-full" bind:this={contentContainer}>
                 <slot />
             </main>
