@@ -5,6 +5,7 @@
     import { Svrollbar } from "svrollbar";
     import { onMount } from "svelte";
     import { navigating } from "$app/stores";
+    import { background } from "$lib/stores/app";
 
     let header: HTMLElement;
     let actionBar: HTMLElement;
@@ -22,7 +23,17 @@
         viewportContainer.style.paddingTop = `${header.clientHeight + parseInt(paddingBottom.match(/\d+/g)?.toString() || "0")}px`;
     }
 
-    $: if ($navigating === null) updateViewport();
+    function resetBackground() {
+        background.set({
+            from: "#1E1E21",
+            to: "#000000",
+        });
+    }
+
+    $: if ($navigating === null) {
+        updateViewport();
+        resetBackground();
+    }
 
     onMount(() => {
         isMounted = true;
