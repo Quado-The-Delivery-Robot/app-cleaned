@@ -20,7 +20,7 @@
 
     function updateBackground(background: background) {
         backgroundElement.style.setProperty("--tw-gradient-from", background.from);
-        //document.body.style.setProperty("--tw-gradient-stops", `var(--tw-gradient-from), ${background.to} var(--tw-gradient-via-position), var(--tw-gradient-to)`);
+        backgroundElement.style.setProperty("--tw-gradient-stops", `var(--tw-gradient-from), ${background.to} var(--tw-gradient-via-position), var(--tw-gradient-to)`);
         backgroundElement.style.setProperty("--tw-gradient-to", background.to);
     }
 
@@ -33,3 +33,9 @@
         backgroundStore.subscribe(updateBackground);
     });
 </script>
+
+<style lang="postcss">
+    body {
+        background-size: 100% 200%;
+    }
+</style>
