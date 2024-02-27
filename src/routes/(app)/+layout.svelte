@@ -4,7 +4,7 @@
     import ActionBar from "$lib/protected/components/actionBar.svelte";
     import { Svrollbar } from "svrollbar";
     import { onMount } from "svelte";
-    import { navigating } from "$app/stores";
+    import { navigating, page } from "$app/stores";
     import { background } from "$lib/stores/app";
 
     let header: HTMLElement;
@@ -13,6 +13,7 @@
     let contentContainer: HTMLElement;
     let isMounted: boolean = false;
     let updateBackgroundPosition: () => never;
+    $: dontResetBackground = $page.url.pathname.includes("/restaurant/");
 
     function updateViewport() {
         if (!isMounted) return;
@@ -24,6 +25,8 @@
     }
 
     function resetBackground() {
+        if (dontResetBackground) return;
+
         background.set({
             from: "#1E1E21",
             to: "#000000",
