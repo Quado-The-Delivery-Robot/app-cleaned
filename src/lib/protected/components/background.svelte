@@ -25,7 +25,7 @@
     }
 
     onMount(() => {
-        backgroundElement = document.body;
+        backgroundElement = viewportContainer;
 
         updatePosition();
 
@@ -36,6 +36,10 @@
 
 <style lang="postcss">
     :global(body) {
+        @apply bg-background;
+    }
+
+    :global(.pageViewport) {
         background-size: 100% 200%;
         @apply bg-gradient-to-b from-backgroundSecondary to-background bg-no-repeat;
     }
