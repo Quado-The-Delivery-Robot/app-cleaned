@@ -72,7 +72,7 @@
     .pageViewport {
         -ms-overflow-style: none;
         scrollbar-width: none;
-        -webkit-overflow-scrolling: touch;
+        -webkit-overflow-scrolling: auto;
     }
 
     .pageViewport::-webkit-scrollbar {
