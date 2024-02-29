@@ -29,8 +29,8 @@
         <div class="text-left">
             <Rating rating={2.7} />
 
-            <p class=" text-sm font-semibold">{data.restaurant.location}</p>
-            <p>{data.restaurant.description}</p>
+            <p class=" text-sm font-semibold p-2">{data.restaurant.location}</p>
+            <p class="p-2">{data.restaurant.description}</p>
         </div>
         {#each Object.values(data.feed) as section}
             <Section name={section.name} hasHeader={section.hasHeader} items={section.data} sectionType={section.sectionType} itemType={section.itemType} />
