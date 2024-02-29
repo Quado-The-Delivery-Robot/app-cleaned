@@ -18,6 +18,8 @@
     }
 
     function updateBackground(background: background) {
+        if (!viewportContainer) return;
+
         viewportContainer.style.setProperty("--tw-gradient-from", background.from);
         viewportContainer.style.setProperty("--tw-gradient-stops", `var(--tw-gradient-from), ${background.to} var(--tw-gradient-via-position), var(--tw-gradient-to)`);
         viewportContainer.style.setProperty("--tw-gradient-to", background.to);
