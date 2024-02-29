@@ -52,8 +52,6 @@
     });
 </script>
 
-<Background {viewportContainer} bind:updatePosition={updateBackgroundPosition} />
-
 <div class="w-screen h-screen overflow-hidden flex flex-col lg:flex-row-reverse justify-center items-center">
     <div class="w-screen flex flex-col flex-1 h-full relative">
         <Header bind:header />
@@ -69,6 +67,8 @@
 
     <ActionBar bind:actionBar />
 </div>
+
+<Background {viewportContainer} bind:updatePosition={updateBackgroundPosition} />
 
 <style lang="postcss">
     .pageViewport {
