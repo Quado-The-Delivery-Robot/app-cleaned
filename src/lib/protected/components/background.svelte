@@ -4,14 +4,13 @@
     import { background as backgroundStore, background } from "$lib/stores/app";
 
     export let viewportContainer: HTMLDivElement;
-    let backgroundElement: HTMLElement;
     let scrollTicking: boolean = false;
 
     export function updatePosition() {
         if (scrollTicking) return;
 
         window.requestAnimationFrame(() => {
-            backgroundElement.style.backgroundPosition = `0% ${Math.min((viewportContainer.scrollTop / backgroundElement.clientHeight) * 100, 100)}%`;
+            viewportContainer.style.backgroundPosition = `0% ${Math.min((viewportContainer.scrollTop / viewportContainer.clientHeight) * 100, 100)}%`;
             scrollTicking = false;
         });
 
@@ -19,14 +18,14 @@
     }
 
     function updateBackground(background: background) {
-        backgroundElement.style.setProperty("--tw-gradient-from", background.from);
-        backgroundElement.style.setProperty("--tw-gradient-stops", `var(--tw-gradient-from), ${background.to} var(--tw-gradient-via-position), var(--tw-gradient-to)`);
-        backgroundElement.style.setProperty("--tw-gradient-to", background.to);
+        if (!viewportContainer) return;
+
+        viewportContainer.style.setProperty("--tw-gradient-from", background.from);
+        viewportContainer.style.setProperty("--tw-gradient-stops", `var(--tw-gradient-from), ${background.to} var(--tw-gradient-via-position), var(--tw-gradient-to)`);
+        viewportContainer.style.setProperty("--tw-gradient-to", background.to);
     }
 
     onMount(() => {
-        backgroundElement = document.body;
-
         updatePosition();
 
         updateBackground(get(backgroundStore));
@@ -36,6 +35,10 @@
 
 <style lang="postcss">
     :global(body) {
+        @apply bg-background;
+    }
+
+    :global(.pageViewport) {
         background-size: 100% 200%;
         @apply bg-gradient-to-b from-backgroundSecondary to-background bg-no-repeat;
     }

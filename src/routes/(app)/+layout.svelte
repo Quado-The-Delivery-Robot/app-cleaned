@@ -22,6 +22,8 @@
 
         const paddingBottom: string = window.getComputedStyle(header, null).getPropertyValue("padding-bottom");
         viewportContainer.style.paddingTop = `${header.clientHeight + parseInt(paddingBottom.match(/\d+/g)?.toString() || "0")}px`;
+
+        viewportContainer.scrollTop = 0;
     }
 
     function resetBackground() {
@@ -72,7 +74,7 @@
     .pageViewport {
         -ms-overflow-style: none;
         scrollbar-width: none;
-        -webkit-overflow-scrolling: touch;
+        -webkit-overflow-scrolling: auto;
     }
 
     .pageViewport::-webkit-scrollbar {
