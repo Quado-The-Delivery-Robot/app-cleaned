@@ -7,7 +7,7 @@
 
     export let hasHeader: boolean;
     export let name: string;
-    export let items: sectionItem[];
+    export let items: any[];
     export let sectionType: sectionType;
     export let itemType: itemType;
 
