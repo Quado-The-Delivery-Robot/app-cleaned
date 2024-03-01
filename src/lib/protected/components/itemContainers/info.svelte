@@ -9,7 +9,7 @@
 </script>
 
 <Base {data} bind:backgroundColor bind:borderColor>
-    <div class="w-60 onlyGlass" style="background-color: rgba({hexToRgb(backgroundColor)}, var(--tw-bg-opacity)); border-color: {borderColor};">
+    <div class="onlyGlass w-60 overflow-hidden" style="background-color: rgba({hexToRgb(backgroundColor)}, var(--tw-bg-opacity)); border-color: {borderColor};">
         <div class="w-full flex justify-start items-center gap-2">
             <img class="w-14 h-14 aspect-square" src={data.image} alt={data.name} />
 
