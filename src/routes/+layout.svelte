@@ -12,4 +12,8 @@
     :global(body) {
         @apply w-full h-screen text-center overflow-hidden;
     }
+
+    :global(.splide__pagination) {
+        @apply !hidden;
+    }
 </style>

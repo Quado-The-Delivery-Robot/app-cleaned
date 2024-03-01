@@ -98,9 +98,3 @@
         </Splide>
     </div>
 </div>
-
-<style lang="css">
-    .splide__pagination {
-        @apply !hidden;
-    }
-</style>
