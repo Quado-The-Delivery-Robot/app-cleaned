@@ -36,7 +36,7 @@ const sections: section[] = [
 ];
 
 export const load: PageLoad = async ({ fetch, params }) => {
-    const result = await fetch(`${PUBLIC_ENDPOINT}/v1/restaurants/info/${params.slug}`, {
+    const result = await fetch(`${PUBLIC_ENDPOINT}/v1/restaurants/info/${params.restaurant}`, {
         credentials: "include",
     });
     const { restaurant }: { restaurant: restaurant } = await result.json();
