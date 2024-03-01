@@ -50,7 +50,7 @@
         <p class="text-red-400 font-medium text-lg">${order.price}</p>
     </div>
 
-    <div class="flex gap-4 justify-start items-center text-primary-700 text-lg mb-2">
+    <div class="flex gap-4 justify-start items-center text-primary-700 text-lg">
         <p class="font-medium flex justify-start items-center">
             {#if inProgress}
                 <div class="inProgressIndicator aspect-square h-2.5 bg-brand rounded-full mr-2" />
@@ -65,12 +65,10 @@
     </div>
 
     {#if inProgress}
-        <div class="relative aspect-[1.5/1] w-full sm:w-auto sm:h-72 overflow-hidden rounded-lg">
+        <div class="relative aspect-[1.5/1] w-full sm:w-auto sm:h-72 overflow-hidden rounded-lg mt-2">
             <div class="absolute w-full h-full" bind:this={mapContainer} />
         </div>
     {/if}
-
-    <p class="text-base text-primary-800 font-normal"></p>
 </div>
 
 <style>
