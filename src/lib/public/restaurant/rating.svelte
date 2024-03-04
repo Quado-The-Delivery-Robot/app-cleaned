@@ -15,5 +15,5 @@
         {/each}
     </div>
 
-    <p class="font-semibold">{rating}</p>
+    <p class="font-semibold ml-1">{rating}</p>
 </div>
