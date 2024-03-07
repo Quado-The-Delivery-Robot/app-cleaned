@@ -2,7 +2,7 @@
     import Landing from "$lib/public/index/landing.svelte";
 </script>
 
-<Landing></Landing>
+<Landing />
 
 <style lang="postcss">
     :global(body) {
