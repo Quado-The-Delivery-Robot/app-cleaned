@@ -48,7 +48,7 @@
             <a href="/#mission">Mission</a>
         </div>
 
-        <img class="h-12 mx-12" src="/images/monke-mob/logo.svg" alt="quado logo" />
+        <img class="h-12 mx-12" src="/icon.png" alt="Quado logo" />
 
         <div class="justify-start items-center gap-8 basis-full hidden md:flex">
             <a href="/#team">Team</a>
