@@ -29,11 +29,11 @@
     {:then}
         <div class="text-left">
             <p class="text-2xl font-semibold">{data.restaurant.name}</p>
-            <p class="text-sm mt-2">{data.restaurant.location}</p>
+            <p class="text-sm mt-1 mb-4">{data.restaurant.location}</p>
 
             <Rating rating={2.7} />
 
-            <p class="mt-3">{data.restaurant.description}</p>
+            <p class="mt-4">{data.restaurant.description}</p>
         </div>
 
         <MenuSections />
