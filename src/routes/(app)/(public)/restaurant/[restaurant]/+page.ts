@@ -22,14 +22,14 @@ const sections: section[] = [
     {
         name: "New to you",
         sectionType: "info",
-        itemType: "restaurant",
+        itemType: "item",
         endpoint: "v1/items/recommended/",
         hasHeader: true,
     },
     {
         name: "Popular",
         sectionType: "info",
-        itemType: "restaurant",
+        itemType: "item",
         endpoint: "v1/items/recommended/",
         hasHeader: true,
     },

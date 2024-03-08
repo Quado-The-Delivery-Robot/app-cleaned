@@ -13,6 +13,7 @@
         if (data.type === "restaurant") {
             goto(`/restaurant/${data.id}`);
         } else if (data.type === "item") {
+            goto(`/item/${data.id}`);
         }
     }
 
