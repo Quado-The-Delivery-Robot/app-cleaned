@@ -1,7 +1,7 @@
 <script lang="ts">
-    import Background from "$lib/protected/components/background.svelte";
-    import Header from "$lib/protected/components/header.svelte";
-    import ActionBar from "$lib/protected/components/actionBar.svelte";
+    import Background from "$lib/protected/background.svelte";
+    import Header from "$lib/protected/header.svelte";
+    import ActionBar from "$lib/protected/actionBar.svelte";
     import { Svrollbar } from "svrollbar";
     import { onMount } from "svelte";
     import { navigating, page } from "$app/stores";
