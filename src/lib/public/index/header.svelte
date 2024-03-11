@@ -30,7 +30,7 @@
     });
 </script>
 
-<header class="w-screen absolute top-0 left-0 z-10 text-lg text-primary transition-all duration-300 {scrolling || showMenu ? 'backdrop-blur-md backdrop-brightness-[0.15] py-4' : 'py-6'}">
+<header class="w-full absolute top-0 left-0 z-10 text-lg text-primary transition-all duration-300 {scrolling || showMenu ? 'backdrop-blur-md backdrop-brightness-[0.15] py-4' : 'py-6'}">
     <div class="flex justify-center items-center relative">
         <button
             class="absolute top-1/2 -translate-y-1/2 left-8 h-6 aspect-square md:hidden z-20"
