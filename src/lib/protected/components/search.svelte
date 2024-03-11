@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { Splide } from "@splidejs/svelte-splide";
     import { goto } from "$app/navigation";
     import { PUBLIC_ENDPOINT } from "$env/static/public";
     import { onMount } from "svelte";
@@ -34,9 +35,20 @@
         <input class="bg-transparent" placeholder={`Try searching "${tags[Math.floor(Math.random() * tags.length)]}"`} bind:this={searchInput} on:keypress={inputKeyPress} />
     </div>
 
-    <div class="flex gap-3 text-sm text-primary-700">
+    <Splide
+        options={{
+            gap: "0.75rem",
+            perMove: 1,
+            wheel: true,
+            autoHeight: true,
+            autoWidth: true,
+            focus: 0,
+            arrows: false,
+            omitEnd: true,
+        }}
+    >
         {#each tags as tag}
-            <button class="glass rounded-full">{tag}</button>
+            <button class="glass rounded-full text-sm text-primary-700">{tag}</button>
         {/each}
-    </div>
+    </Splide>
 </div>
