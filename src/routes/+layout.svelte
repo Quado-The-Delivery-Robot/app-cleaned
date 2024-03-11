@@ -13,6 +13,16 @@
         @apply w-full h-screen text-center overflow-hidden;
     }
 
+    :global(.pageViewport) {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: auto;
+    }
+
+    :global(.pageViewport::-webkit-scrollbar) {
+        display: none;
+    }
+
     :global(.splide__pagination) {
         @apply !hidden;
     }

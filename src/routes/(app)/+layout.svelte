@@ -69,15 +69,3 @@
 </div>
 
 <Background {viewportContainer} bind:updatePosition={updateBackgroundPosition} />
-
-<style lang="postcss">
-    .pageViewport {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        -webkit-overflow-scrolling: auto;
-    }
-
-    .pageViewport::-webkit-scrollbar {
-        display: none;
-    }
-</style>
