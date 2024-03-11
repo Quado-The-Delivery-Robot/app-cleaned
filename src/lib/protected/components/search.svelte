@@ -1,9 +1,10 @@
 <script lang="ts">
     import { goto } from "$app/navigation";
+    import { PUBLIC_ENDPOINT } from "$env/static/public";
+    import { onMount } from "svelte";
 
     let searchInput: HTMLInputElement;
-    const phrases: string[] = ["Burger", "Fresh", "Salad", "Healthy"];
-    let placeholderPhrase: string = phrases[Math.floor(Math.random() * phrases.length)];
+    let tags: string[] = [];
 
     function search() {
         goto(`/search?query=${searchInput.value}`);
@@ -14,6 +15,12 @@
 
         search();
     }
+
+    onMount(async () => {
+        const tagsResponse = await fetch(`${PUBLIC_ENDPOINT}/v1/search/tags/get`);
+        const { tags: newTags } = await tagsResponse.json();
+        tags = newTags;
+    });
 </script>
 
 <div class="w-full flex flex-col gap-3 pb-6">
@@ -24,12 +31,12 @@
             </svg>
         </button>
 
-        <input class="bg-transparent" placeholder={`Try searching "${placeholderPhrase}"`} bind:this={searchInput} on:keypress={inputKeyPress} />
+        <input class="bg-transparent" placeholder={`Try searching "${tags[Math.floor(Math.random() * tags.length)]}"`} bind:this={searchInput} on:keypress={inputKeyPress} />
     </div>
 
     <div class="flex gap-3 text-sm text-primary-700">
-        {#each [{ name: "All", icon: "" }, { name: "Burger", icon: "burger" }, { name: "Salad", icon: "salad" }] as searchTag}
-            <button class="glass rounded-full">{searchTag.name}</button>
+        {#each tags as tag}
+            <button class="glass rounded-full">{tag}</button>
         {/each}
     </div>
 </div>

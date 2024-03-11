@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Search from "$lib/protected/home/search.svelte";
+    import Search from "$lib/protected/components/search.svelte";
     import Section from "$lib/protected/components/section.svelte";
     import type { PageData } from "./$types";
 
