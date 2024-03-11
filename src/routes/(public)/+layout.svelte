@@ -12,3 +12,9 @@
 </div>
 
 <Svrollbar viewport={viewportContainer} contents={contentContainer} />
+
+<style lang="postcss">
+    :global(body) {
+        @apply bg-background;
+    }
+</style>
