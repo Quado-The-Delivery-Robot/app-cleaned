@@ -1,13 +1,13 @@
 <script lang="ts">
     import { onMount } from "svelte";
 
-    let main: HTMLDivElement;
+    let pageViewport: HTMLDivElement;
     let ticking: boolean = false;
     let showMenu: boolean = false;
     $: scrolling = false;
 
     function scroll() {
-        const scrollPosition: number = main.scrollTop;
+        const scrollPosition: number = pageViewport.scrollTop;
 
         if (!ticking) {
             window.requestAnimationFrame(() => {
@@ -20,12 +20,13 @@
     }
 
     onMount(() => {
-        main = document.querySelector("main")! as HTMLDivElement;
+        pageViewport = document.querySelector(".pageViewport")! as HTMLDivElement;
+
         scroll();
-        main.addEventListener("scroll", scroll);
+        pageViewport.addEventListener("scroll", scroll);
 
         return () => {
-            main.removeEventListener("scroll", scroll);
+            pageViewport.removeEventListener("scroll", scroll);
         };
     });
 </script>
