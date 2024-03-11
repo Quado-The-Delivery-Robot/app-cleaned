@@ -1,5 +1,6 @@
 <script lang="ts">
     import { Splide } from "@splidejs/svelte-splide";
+    import { SplideSlide } from "@splidejs/svelte-splide";
     import { goto } from "$app/navigation";
     import { PUBLIC_ENDPOINT } from "$env/static/public";
     import { onMount } from "svelte";
@@ -38,7 +39,7 @@
     <div class="rounded-full overflow-hidden">
         <Splide
             options={{
-                gap: "1rem",
+                gap: "0.75rem",
                 perMove: 1,
                 wheel: true,
                 autoHeight: true,
@@ -49,7 +50,9 @@
             }}
         >
             {#each tags as tag}
-                <button class="glass rounded-full text-sm text-primary-700">{tag}</button>
+                <SplideSlide>
+                    <button class="w-fit h-fit snap-start shrink-0 glass rounded-full text-sm text-primary-700">{tag}</button>
+                </SplideSlide>
             {/each}
         </Splide>
     </div>
