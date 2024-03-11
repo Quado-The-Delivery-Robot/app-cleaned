@@ -1,6 +1,6 @@
-<footer class="w-full h-fit py-12 select-text flex flex-col items-center justify-center text-primary-700 text-base [&>div]:px-[10%] 2xl:[&>div]:px-[18%]">
-    <div class="w-full pb-3 flex items-center justify-between flex-col md:flex-row">
-        <a class="h-12 aspect-square" href="https://quadoapp.com">
+<footer class="w-full h-fit py-12 select-text flex flex-col items-center justify-center text-primary-700 text-base text-left [&>div]:px-[10%] 2xl:[&>div]:px-[18%]">
+    <div class="w-full pb-3 flex items-start md:items-center justify-start md:justify-between flex-col md:flex-row">
+        <a class="h-12 aspect-square pb-3 md:pb-0" href="https://quadoapp.com">
             <img class="w-full h-full" src="/icon.png" alt="Quado logo" />
         </a>
 
