@@ -1,6 +1,6 @@
 <script lang="ts">
     import { signIn } from "@auth/sveltekit/client";
-    import { PageData } from "./$types";
+    import type { PageData } from "./$types";
 
     export let data: PageData;
 </script>
