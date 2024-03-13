@@ -33,7 +33,7 @@
             </svg>
         </button>
 
-        <input class="bg-transparent" placeholder={`Try searching "${tags[Math.floor(Math.random() * tags.length)]}"`} bind:this={searchInput} on:keypress={inputKeyPress} />
+        <input class="bg-transparent w-full" placeholder={`Try searching "${tags[Math.floor(Math.random() * tags.length)]}"`} bind:this={searchInput} on:keypress={inputKeyPress} />
     </div>
 
     <div class="rounded-full overflow-hidden">
