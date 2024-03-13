@@ -14,12 +14,14 @@ export type order = {
     placed: number;
 };
 
-export type restuarantItem = {
+export type restaurantItem = {
     name: string;
     price: number;
     type: string;
     description: string;
     calories: number;
+    data: any;
+    id: string;
 };
 
 export type restaurant = {
