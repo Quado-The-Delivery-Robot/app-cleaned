@@ -49,9 +49,7 @@ export type sectionItem = {
     type: itemType;
 };
 
-export type cartItem = number;
-
 export type cart = {
     restaurant: string;
-    items: cartItem[];
+    items: string[];
 };
