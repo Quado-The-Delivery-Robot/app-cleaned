@@ -30,7 +30,7 @@ export type restaurant = {
     tags: string[];
     image: string;
     id: string;
-    items: any;
+    items: restaurantItem[];
     description: string;
     location: string;
 };
