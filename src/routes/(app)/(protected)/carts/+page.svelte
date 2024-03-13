@@ -1,5 +1,6 @@
 <script lang="ts">
     import Title from "$lib/core/components/title.svelte";
+    import Cart from "$lib/protected/carts/cart.svelte";
     import { onMount } from "svelte";
     import type { PageData } from "./$types";
 
@@ -11,14 +12,14 @@
     });
 </script>
 
-<Title>Cart</Title>
+<Title>Carts</Title>
 
 {#await data.carts}
     <p>Loading...</p>
 {:then}
     {#if hasCarts}
         {#each Object.values(data.carts) as cart}
-            <p>{cart.restaurant}</p>
+            <Cart cart={cart} />
         {/each}
     {:else}
         <div class="flex flex-col gap-2 justify-center items-center">
