@@ -25,7 +25,7 @@
     });
 </script>
 
-<div class="w-full flex flex-col gap-3 pb-6">
+<div class="w-full flex flex-col gap-2 pb-6">
     <div class="glass flex gap-3 rounded-full px-5 py-2.5">
         <button class="w-6 aspect-square" on:click={search}>
             <svg class="fill-white w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -33,7 +33,7 @@
             </svg>
         </button>
 
-        <input class="bg-transparent" placeholder={`Try searching "${tags[Math.floor(Math.random() * tags.length)]}"`} bind:this={searchInput} on:keypress={inputKeyPress} />
+        <input class="bg-transparent w-full" placeholder={`Try searching "${tags[Math.floor(Math.random() * tags.length)]}"`} bind:this={searchInput} on:keypress={inputKeyPress} />
     </div>
 
     <div class="rounded-full overflow-hidden">
