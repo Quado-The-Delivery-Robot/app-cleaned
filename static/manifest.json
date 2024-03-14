@@ -46,5 +46,9 @@
     "scope": "/",
     "theme_color": "#46EBA5",
     "id": "quado",
-    "description": "Quado is the new delivery robot making deliveries faster and more efficient."
+    "description": "Quado is the new delivery robot making deliveries faster and more efficient.",
+    "orientation": "natural",
+    "lang": "en",
+    "dir": "ltr",
+    "categories": ["food", "utilities"]
 }
