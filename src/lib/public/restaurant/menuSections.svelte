@@ -1,8 +1,14 @@
 <script lang="ts">
-    import type { restuarantItem } from "$lib/core/types";
     import Section from "$lib/protected/components/section.svelte";
+    import type { restuarantItem } from "$lib/core/types";
 
-    export let data: restuarantItem;
+    export let item: restuarantItem;
 </script>
 
-<div class="lg:flex"></div>
+<div class="lg:flex">
+    {#if (item.type = item.type)}
+        <div>{item}</div>
+    {:else}
+        <div class=" hidden">{item}</div>
+    {/if}
+</div>
