@@ -14,12 +14,14 @@ export type order = {
     placed: number;
 };
 
-export type restuarantItem = {
+export type restaurantItem = {
     name: string;
     price: number;
     type: string;
     description: string;
     calories: number;
+    data: any;
+    id: string;
 };
 
 export type restaurant = {
@@ -28,7 +30,7 @@ export type restaurant = {
     tags: string[];
     image: string;
     id: string;
-    items: any;
+    items: restaurantItem[];
     description: string;
     location: string;
 };
@@ -47,9 +49,7 @@ export type sectionItem = {
     type: itemType;
 };
 
-export type cartItem = number;
-
 export type cart = {
     restaurant: string;
-    items: cartItem[];
+    items: string[];
 };

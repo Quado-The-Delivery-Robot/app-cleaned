@@ -1,7 +1,7 @@
 <script lang="ts">
     import "$lib/core/tailwind.css";
     import "@splidejs/svelte-splide/css/core";
-    import HeightFix from "$lib/core/heightFix.svelte";
+    import HeightFix from "$lib/core/scripts/heightFix.svelte";
 </script>
 
 <HeightFix />

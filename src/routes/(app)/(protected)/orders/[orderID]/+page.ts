@@ -7,9 +7,9 @@ export const load: PageLoad = async ({ fetch, params }) => {
     const result = await fetch(`${PUBLIC_ENDPOINT}/v1/orders/get/${params.orderID}`, {
         credentials: "include",
     });
-    const { order }: { order: order } = await result.json();
+    const { order }: { order: order | undefined } = await result.json();
 
-    if (order === null) {
+    if (typeof order === "undefined") {
         throw redirect(307, "/orders");
     }
 

@@ -1,5 +1,4 @@
 <script lang="ts">
-    import ArrowLeft from "$lib/core/components/images/arrowLeft.svelte";
     import { page, navigating } from "$app/stores";
     import { onMount } from "svelte";
 
@@ -73,7 +72,9 @@
                 history.back();
             }}
         >
-            <ArrowLeft classes="w-full h-full stroke-white" />
+            <svg class="w-full h-full stroke-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2.5" fill="none">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+            </svg>
         </button>
 
         <p class="text-lg text-primary font-semibold absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">{pageName}</p>

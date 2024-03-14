@@ -6,7 +6,7 @@
     import { onMount } from "svelte";
 
     let searchInput: HTMLInputElement;
-    let tags: string[] = [];
+    let tags: string[] = ["Healthy"];
 
     function search() {
         goto(`/search?query=${searchInput.value}`);

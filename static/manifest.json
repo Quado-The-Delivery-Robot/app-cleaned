@@ -2,7 +2,6 @@
     "manifest_version": 3,
     "short_name": "Quado",
     "name": "Quado",
-    "description": "",
     "start_url": "/home",
     "icons": [
         {
@@ -45,5 +44,11 @@
     "background_color": "#000000",
     "display": "standalone",
     "scope": "/",
-    "theme_color": "#46EBA5"
+    "theme_color": "#46EBA5",
+    "id": "quado",
+    "description": "Quado is the new delivery robot making deliveries faster and more efficient.",
+    "orientation": "natural",
+    "lang": "en",
+    "dir": "ltr",
+    "categories": ["food", "utilities"]
 }

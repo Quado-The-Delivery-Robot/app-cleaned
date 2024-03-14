@@ -1,5 +1,5 @@
 import { PUBLIC_ENDPOINT } from "$env/static/public";
-import type { restaurant, restuarantItem } from "$lib/core/types";
+import type { restaurant, restaurantItem } from "$lib/core/types";
 import type { PageLoad } from "./$types";
 import type { itemType, sectionType } from "$lib/core/types";
 
@@ -40,7 +40,7 @@ export const load: PageLoad = async ({ fetch, params }) => {
         credentials: "include",
     });
     const { restaurant }: { restaurant: restaurant } = await result.json();
-    const feed: { name: string; hasHeader: boolean; sectionType: sectionType; itemType: itemType; data: restuarantItem[] }[] = [];
+    const feed: { name: string; hasHeader: boolean; sectionType: sectionType; itemType: itemType; data: restaurantItem[] }[] = [];
 
     for (let index = 0; index < sections.length; index++) {
         const { name, sectionType, itemType, endpoint, hasHeader }: section = sections[index];
@@ -49,7 +49,7 @@ export const load: PageLoad = async ({ fetch, params }) => {
         });
         const { data } = await result.json();
 
-        data.forEach((item: restuarantItem) => {
+        data.forEach((item: restaurantItem) => {
             (item as any).data = {
                 colors: restaurant.colors,
             };
