@@ -1,9 +1,9 @@
 <script lang="ts">
-    import Header from "$lib/public/index/header.svelte";
-    import Footer from "$lib/public/index/footer.svelte";
-    import Landing from "$lib/public/index/landing.svelte";
-    import Why from "$lib/public/index/why.svelte";
-    import Mission from "$lib/public/index/mission.svelte";
+    import Header from "$lib/public/landing/header.svelte";
+    import Footer from "$lib/public/landing/footer.svelte";
+    import Landing from "$lib/public/landing/landing.svelte";
+    import Why from "$lib/public/landing/why.svelte";
+    import Mission from "$lib/public/landing/mission.svelte";
 </script>
 
 <Header />
