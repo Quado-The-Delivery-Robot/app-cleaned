@@ -471,5 +471,7 @@
             "description": "Quickly view your carts."
         }
     ],
-    "display_override": ["window-controls-overlay"]
+    "display_override": ["window-controls-overlay"],
+    "handle_links": "preferred",
+    "scope_extensions": [{ "origin": "*.quadoapp.com" }]
 }
