@@ -12,7 +12,7 @@
             </div>
         {/each}
 
-        <div class="w-[15vw] aspect-square absolute lg:right-20 xl:right-40 top-1/2 -translate-y-1/2 z-[2] hidden lg:block">
+        <div class="w-[15vw] aspect-square absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-[2] hidden lg:block">
             <img class="w-full h-full" alt="Quado logo" src="/images/ios/1024.png" />
         </div>
     </div>
