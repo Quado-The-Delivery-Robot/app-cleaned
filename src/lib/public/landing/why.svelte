@@ -7,7 +7,7 @@
         {#each Array(4) as _value, quadrant}
             <div class="absolute w-[calc(50%-8%)] h-[calc(50%-8%)]" style="top: calc({25 * (quadrant == 0 || quadrant == 1 ? 0 : 2)}% + {8 * (quadrant == 0 || quadrant == 1 ? -1 : 1)}%); left: calc({25 * (quadrant == 0 || quadrant == 2 ? 0 : 2)}% + {8 * (quadrant == 0 || quadrant == 2 ? -1 : 1)}%);">
                 {#each Array(4) as _value, _index}
-                    <p class="questionMark aspect-square absolute fill" style="--rotation: {Math.random() * (Math.random() < 0.5 ? -50 : 50)}deg; --delay: {Math.random() * 3}s; width: {Math.random() * 20 + 30}px; top: {Math.random() * 100}%; left: {Math.random() * 100}%;">?</p>
+                    <p class="questionMark aspect-square absolute fill text-3xl" style="--rotation: {Math.random() * (Math.random() < 0.5 ? -50 : 50)}deg; --delay: {Math.random() * 3}s; width: {Math.random() * 20 + 30}px; top: {Math.random() * 100}%; left: {Math.random() * 100}%;">?</p>
                 {/each}
             </div>
         {/each}
