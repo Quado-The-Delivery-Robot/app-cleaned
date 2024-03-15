@@ -13,7 +13,7 @@
         <p class="text-lg">{description}</p>
     </div>
 
-    <div class="w-full md:w-[55%] h-full {direction === 'right' ? 'md:pl-[15%]' : 'md:pr-[15%]'}">
+    <div class="w-full relative md:w-[55%] h-full {direction === 'right' ? 'md:pl-[15%]' : 'md:pr-[15%]'}">
         <slot />
     </div>
 </div>
