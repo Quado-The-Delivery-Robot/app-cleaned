@@ -13,7 +13,7 @@
         <p class="text-lg">{description}</p>
     </div>
 
-    <div class="w-full relative md:w-[55%] h-full">
+    <div class="w-full relative md:w-[55%] h-[80vh]">
         <slot />
     </div>
 </div>
