@@ -3,7 +3,7 @@
 </script>
 
 <Section id="why" title="Why did we<br>make Quado?" description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nulla odio ipsum sit asperiores alias iste nesciunt architecto iusto quam">
-    <div class="w-full h-full absolute right-0 top-1/2 -translate-y-1/2 blur-sm brightness-75 lg:blur-none lg:brightness-100">
+    <div class="w-full h-full absolute right-0 top-1/2 -translate-y-1/2 blur-sm brightness-75 lg:blur-none lg:brightness-100 select-none">
         {#each Array(4) as _value, quadrant}
             <div class="absolute w-[calc(50%-8%)] h-[calc(50%-8%)]" style="top: calc({25 * (quadrant == 0 || quadrant == 1 ? 0 : 2)}% + {8 * (quadrant == 0 || quadrant == 1 ? -1 : 1)}%); left: calc({25 * (quadrant == 0 || quadrant == 2 ? 0 : 2)}% + {8 * (quadrant == 0 || quadrant == 2 ? -1 : 1)}%);">
                 {#each Array(4) as _value, _index}
@@ -13,7 +13,7 @@
         {/each}
 
         <div class="w-[15vw] aspect-square absolute lg:right-20 xl:right-40 top-1/2 -translate-y-1/2 z-[2] hidden lg:block">
-            <img class="w-full h-full" alt="Quado logo" src="/images/icon.png" />
+            <img class="w-full h-full" alt="Quado logo" src="/images/ios/1024.png" />
         </div>
     </div>
 </Section>
