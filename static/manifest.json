@@ -473,5 +473,8 @@
     ],
     "display_override": ["window-controls-overlay"],
     "handle_links": "preferred",
-    "scope_extensions": [{ "origin": "*.quadoapp.com" }]
+    "scope_extensions": [{ "origin": "*.quadoapp.com" }],
+    "edge_side_panel": {
+        "preferred_width": 400
+    }
 }
