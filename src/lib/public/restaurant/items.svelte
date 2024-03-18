@@ -19,7 +19,7 @@
     });
 </script>
 
-<div class="flex flex-col lg:flex-row">
+<div class="w-full flex flex-col lg:flex-row gap-2">
     <div class="flex gap-[1px] flex-row lg:flex-col overflow-hidden rounded-xl border border-background-800 bg-background-800">
         {#each Object.entries(groups) as [group, items]}
             <button
@@ -33,7 +33,7 @@
         {/each}
     </div>
 
-    <div class="grid grid-cols-2 auto-rows-max">
+    <div class="flex-grow grid grid-cols-2 auto-rows-max">
         {#each items as item}
             {#if item.type === currentGroup || currentGroup === "All"}
                 <p>{item.name}</p>
