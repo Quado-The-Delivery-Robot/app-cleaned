@@ -23,6 +23,7 @@
     <div class="flex gap-1 flex-row lg:flex-col">
         {#each Object.entries(groups) as [group, items]}
             <button
+                class="glass"
                 on:click={() => {
                     currentGroup = group;
                 }}
