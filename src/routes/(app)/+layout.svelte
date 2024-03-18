@@ -13,7 +13,6 @@
     let contentContainer: HTMLElement;
     let isMounted: boolean = false;
     let updateBackgroundPosition: () => never;
-    $: dontResetBackground = $page.url.pathname.includes("/restaurant/");
 
     function updateViewport() {
         if (!isMounted) return;
@@ -27,7 +26,7 @@
     }
 
     function resetBackground() {
-        if (dontResetBackground) return;
+        if ($page.url.pathname.includes("restaurant/")) return;
 
         background.set({
             from: "#1E1E21",
