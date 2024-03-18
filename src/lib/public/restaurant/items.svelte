@@ -4,7 +4,7 @@
 
     export let items: restaurantItem[];
     let groups: { [key: string]: restaurantItem[] } = {};
-    let currentGroup: string = "";
+    let currentGroup: string = "All";
 
     onMount(() => {
         groups["All"] = items;
