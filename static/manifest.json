@@ -467,7 +467,7 @@
     "shortcuts": [
         {
             "name": "View carts",
-            "url": "https://quadoapp.com/carts",
+            "url": "/carts",
             "description": "Quickly view your carts."
         }
     ],
