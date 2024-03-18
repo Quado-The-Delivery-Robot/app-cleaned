@@ -23,7 +23,7 @@
     <div class="flex gap-[1px] flex-row lg:flex-col overflow-hidden rounded-xl border border-background-800 bg-background-800">
         {#each Object.entries(groups) as [group, items]}
             <button
-                class="onlyGlass px-6 py-3"
+                class="onlyGlass px-6 py-3 text-nowrap"
                 on:click={() => {
                     currentGroup = group;
                 }}
