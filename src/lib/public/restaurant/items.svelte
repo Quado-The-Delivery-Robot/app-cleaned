@@ -38,18 +38,18 @@
             {#if item.type === currentGroup || currentGroup === "All"}
                 <div class="onlyGlass w-full overflow-hidden rounded-lg">
                     <div class="w-full flex justify-start items-center gap-2 overflow-hidden">
-                        <img class="w-14 h-14 aspect-square" src={item.image} alt={item.name} />
-
-                        <div class="flex flex-col justify-start items-start flex-grow text-left [&>p]:overflow-hidden [&>p]:text-nowrap [&>p]:text-ellipsis">
+                        <div class="flex flex-col justify-start items-start flex-grow text-left px-4 py-4">
                             <p class="text-lg font-semibold">{item.name}</p>
 
-                            <div class="flex gap-2">
+                            <div class="flex gap-2 text-sm">
                                 <p>${item.price}</p>
                                 <p>{item.calories} calories</p>
                             </div>
 
-                            <p>{item.description}</p>
+                            <p class="mt-2">{item.description}</p>
                         </div>
+
+                        <img class="w-24 aspect-square" src={item.image} alt={item.name} />
                     </div>
                 </div>
             {/if}
