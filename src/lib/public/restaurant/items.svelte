@@ -21,12 +21,14 @@
 
 <div class="flex flex-col lg:flex-row">
     <div class="flex gap-1 flex-row lg:flex-col">
-        {#each Object.keys(groups) as group}
+        {#each Object.entries(groups) as [group, items]}
             <button
                 on:click={() => {
                     currentGroup = group;
-                }}>{group}</button
+                }}
             >
+                {group} <span class="text-primary-700">({items.length})</span>
+            </button>
         {/each}
     </div>
 
