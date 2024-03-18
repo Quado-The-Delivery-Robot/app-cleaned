@@ -1,8 +1,7 @@
 <script lang="ts">
     import Title from "$lib/core/components/title.svelte";
-    import Section from "$lib/protected/components/section.svelte";
     import Rating from "$lib/public/restaurant/rating.svelte";
-    import MenuSections from "$lib/public/restaurant/menuSections.svelte";
+    import Items from "$lib/public/restaurant/items.svelte";
     import { onMount } from "svelte";
     import shadeColor from "$lib/protected/shadeColor";
     import { background } from "$lib/stores/app";
@@ -24,7 +23,7 @@
 <Title>{restaurantName}</Title>
 
 <div class="flex flex-col gap-6 justify-start items-start">
-    {#await data.restaurant && data.feed}
+    {#await data.restaurant}
         <p>Loading...</p>
     {:then}
         <div class="text-left">
@@ -36,10 +35,6 @@
             <p class="mt-4">{data.restaurant.description}</p>
         </div>
 
-        <MenuSections />
-
-        {#each Object.values(data.feed) as section}
-            <Section name={section.name} hasHeader={section.hasHeader} items={section.data} sectionType={section.sectionType} itemType={section.itemType} />
-        {/each}
+        <Items items={data.restaurant.items} />
     {/await}
 </div>

@@ -53,3 +53,11 @@ export type cart = {
     restaurant: string;
     items: string[];
 };
+
+export type feedSection = {
+    name: string;
+    hasHeader: boolean;
+    sectionType: sectionType;
+    itemType: itemType;
+    data: restaurantItem[];
+};

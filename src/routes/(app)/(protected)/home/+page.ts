@@ -1,6 +1,6 @@
 import { PUBLIC_ENDPOINT } from "$env/static/public";
 import type { PageLoad } from "./$types";
-import type { itemType, sectionType } from "$lib/core/types";
+import type { itemType, sectionType, feedSection } from "$lib/core/types";
 
 type section = {
     name: string;
@@ -35,7 +35,7 @@ const sections: section[] = [
 ];
 
 export const load: PageLoad = async ({ fetch }) => {
-    const feed: { name: string; hasHeader: boolean; sectionType: sectionType; itemType: itemType; data: any[] }[] = [];
+    const feed: feedSection[] = [];
 
     for (let index = 0; index < sections.length; index++) {
         const { name, sectionType, itemType, endpoint, hasHeader }: section = sections[index];
