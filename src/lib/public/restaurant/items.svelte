@@ -20,10 +20,10 @@
 </script>
 
 <div class="w-full flex flex-col lg:flex-row gap-2">
-    <div class="flex gap-[1px] flex-row lg:flex-col overflow-hidden rounded-xl border border-background-800 bg-background-800">
+    <div class="flex flex-row lg:flex-col w-[20%] h-fit">
         {#each Object.entries(groups) as [group, items]}
             <button
-                class="onlyGlass px-6 py-3 text-nowrap"
+                class="glass w-full px-6 py-3 text-nowrap"
                 on:click={() => {
                     currentGroup = group;
                 }}
@@ -37,7 +37,7 @@
         {#each items as item}
             {#if item.type === currentGroup || currentGroup === "All"}
                 <div class="onlyGlass w-full overflow-hidden rounded-lg">
-                    <div class="w-full flex justify-start items-center gap-2 overflow-hidden">
+                    <div class="w-full flex justify-start items-center gap-2 overflow-hidden pr-4">
                         <div class="flex flex-col justify-start items-start flex-grow text-left px-4 py-4">
                             <p class="text-lg font-semibold">{item.name}</p>
 
@@ -49,7 +49,7 @@
                             <p class="mt-2">{item.description}</p>
                         </div>
 
-                        <img class="w-24 aspect-square" src={item.image} alt={item.name} />
+                        <img class="w-28 aspect-square" src={item.image} alt={item.name} />
                     </div>
                 </div>
             {/if}
