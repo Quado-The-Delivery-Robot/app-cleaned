@@ -22,6 +22,7 @@ export type restaurantItem = {
     calories: number;
     data: any;
     id: string;
+    image: string;
 };
 
 export type restaurant = {
