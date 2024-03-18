@@ -33,10 +33,10 @@
         {/each}
     </div>
 
-    <div class="flex-grow grid grid-cols-2 auto-rows-max">
+    <div class="flex-grow grid grid-cols-2 auto-rows-max gap-3">
         {#each items as item}
             {#if item.type === currentGroup || currentGroup === "All"}
-                <div class="onlyGlass w-full overflow-hidden">
+                <div class="onlyGlass w-full overflow-hidden rounded-lg">
                     <div class="w-full flex justify-start items-center gap-2 overflow-hidden">
                         <img class="w-14 h-14 aspect-square" src={item.image} alt={item.name} />
 
