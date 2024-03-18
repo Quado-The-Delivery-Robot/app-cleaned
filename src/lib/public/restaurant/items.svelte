@@ -3,8 +3,8 @@
     import { onMount } from "svelte";
 
     export let items: restaurantItem[];
-    let groups: { [key: string]: restaurantItem[] };
-    let currentGroup: string;
+    let groups: { [key: string]: restaurantItem[] } = {};
+    let currentGroup: string = "";
 
     onMount(() => {
         groups["All"] = items;
