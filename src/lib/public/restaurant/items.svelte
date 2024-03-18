@@ -19,7 +19,7 @@
     });
 </script>
 
-<div class="w-full flex flex-col lg:flex-row gap-2">
+<div class="w-full flex flex-col lg:flex-row gap-4">
     <div class="flex gap-2 flex-row lg:flex-col md:w-[20%] lg:w-[13%] h-fit">
         {#each Object.entries(groups) as [group, items]}
             <button
