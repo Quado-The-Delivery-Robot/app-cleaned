@@ -35,7 +35,7 @@
 
     <div class="grid grid-cols-2 auto-rows-max">
         {#each items as item}
-            {#if item.type === currentGroup}
+            {#if item.type === currentGroup || currentGroup === "All"}
                 <p>{item.name}</p>
             {/if}
         {/each}
