@@ -20,10 +20,10 @@
 </script>
 
 <div class="w-full flex flex-col lg:flex-row gap-2">
-    <div class="flex gap-2 flex-row lg:flex-col w-[20%] h-fit">
+    <div class="flex gap-2 flex-row lg:flex-col md:w-[20%] lg:w-[13%] h-fit">
         {#each Object.entries(groups) as [group, items]}
             <button
-                class="glass w-full px-6 py-3 text-nowrap"
+                class="glass w-full px-6 py-3 text-nowrap text-left"
                 on:click={() => {
                     currentGroup = group;
                 }}
