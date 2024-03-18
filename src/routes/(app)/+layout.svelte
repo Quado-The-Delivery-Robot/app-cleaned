@@ -27,7 +27,7 @@
 
     function resetBackground() {
         if ($page.url.pathname.includes("restaurant/")) return;
-
+        console.log($page.url.pathname);
         background.set({
             from: "#1E1E21",
             to: "#000000",
