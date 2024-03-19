@@ -11,9 +11,3 @@
 <Why />
 <Mission />
 <Footer />
-
-<style lang="postcss">
-    :global(body) {
-        @apply bg-background;
-    }
-</style>

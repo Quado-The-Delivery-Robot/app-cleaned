@@ -64,7 +64,7 @@
             <p class="text-sm font-normal">Welcome, {$page.data.session?.user?.name}</p>
         </div>
 
-        <img class="aspect-square h-9 rounded-full border border-backgroundSecondary" src={$page.data.session?.user?.image} alt={$page.data.session?.user?.name} />
+        <img class="aspect-square h-9 rounded-full border border-secondary" src={$page.data.session?.user?.image} alt={$page.data.session?.user?.name} />
     {:else}
         <button
             class="aspect-square w-5"

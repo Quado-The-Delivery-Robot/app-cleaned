@@ -37,7 +37,7 @@ module.exports = {
                     900: "#08492D",
                     950: "#052F1D",
                 },
-                background: {
+                primary: {
                     DEFAULT: "#121212",
                     50: "#252525",
                     100: "#242424",
@@ -51,7 +51,7 @@ module.exports = {
                     900: "#0A0A0A",
                     950: "#070707",
                 },
-                backgroundSecondary: {
+                secondary: {
                     DEFAULT: "#101112",
                     50: "#464A4F",
                     100: "#42474B",

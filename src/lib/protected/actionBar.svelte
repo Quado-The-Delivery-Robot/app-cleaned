@@ -2,7 +2,7 @@
     export let actionBar: HTMLElement;
 </script>
 
-<div class="onlyGlassSecondary border-0 lg:border-r flex px-9 justify-between lg:justify-center items-center text-left pb-10 lg:pb-0 lg:gap-7 lg:items-start flex-row lg:flex-col lg:h-full w-screen lg:w-[25vw] xl:w-[20vw] lg:px-12 py-3 lg:py-6 leading [&>a]:lg:gap-4 [&>a]:w-auto [&>a]:lg:w-full [&>a]:lg:flex [&>a]:items-center [&>a]:gap-1" bind:this={actionBar}>
+<div class="bg-secondary border-0 lg:border-r flex px-9 justify-between lg:justify-center items-center text-left pb-10 lg:pb-0 lg:gap-7 lg:items-start flex-row lg:flex-col lg:h-full w-screen lg:w-[25vw] xl:w-[20vw] lg:px-12 py-3 lg:py-6 leading [&>a]:lg:gap-4 [&>a]:w-auto [&>a]:lg:w-full [&>a]:lg:flex [&>a]:items-center [&>a]:gap-1" bind:this={actionBar}>
     <a href="/home">
         <svg class="aspect-square h-7 fill-brand-600 lg:h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
@@ -22,7 +22,7 @@
 
     <div class="px-2 lg:!hidden">
         <div class="h-7 aspect-square relative">
-            <button class="border border-backgroundSecondary absolute -translate-y-[calc(50%_+_0.1rem)] left-1/2 -translate-x-1/2 bg-brand-600 rounded-xl rotate-45 p-1" id="quickActionButton">
+            <button class="border border-secondary absolute -translate-y-[calc(50%_+_0.1rem)] left-1/2 -translate-x-1/2 bg-brand-600 rounded-xl rotate-45 p-1" id="quickActionButton">
                 <svg class="aspect-square h-9 -rotate-45 fill-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path fill-rule="evenodd" d="M12 3.75a.75.75 0 01.75.75v6.75h6.75a.75.75 0 010 1.5h-6.75v6.75a.75.75 0 01-1.5 0v-6.75H4.5a.75.75 0 010-1.5h6.75V4.5a.75.75 0 01.75-.75z" clip-rule="evenodd" />
                 </svg>
@@ -49,7 +49,7 @@
         <span class="hidden lg:block lg:text-xl">Settings</span>
     </a>
 
-    <div class="w-full h-[1px] bg-background-600 hidden lg:block" />
+    <div class="w-full h-[1px] bg-primary-600 hidden lg:block" />
 
     <a class="aspect-square fill-brand-600 h-10 hidden lg:flex" href="/quick-order">
         <svg class="aspect-square h-9" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

@@ -16,6 +16,6 @@
 
 <style lang="postcss">
     :global(body) {
-        @apply bg-gradient-to-b from-backgroundSecondary to-background bg-no-repeat;
+        @apply bg-gradient-to-b from-secondary to-background bg-no-repeat;
     }
 </style>
