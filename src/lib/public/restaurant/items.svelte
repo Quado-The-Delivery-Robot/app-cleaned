@@ -35,8 +35,8 @@
         {#each items as item}
             {#if item.type === currentGroup || currentGroup === "All"}
                 <div class="primary w-full overflow-hidden rounded-lg">
-                    <div class="w-full flex justify-start items-center gap-2 overflow-hidden pr-4">
-                        <div class="flex flex-col justify-start items-start flex-grow text-left px-4 py-4">
+                    <div class="w-full flex justify-start items-center gap-2 overflow-hidden pr-6">
+                        <div class="flex flex-col justify-start items-start flex-grow text-left px-6 py-6">
                             <p class="text-lg font-semibold leading-none">{item.name}</p>
 
                             <p class="flex gap-2 text-sm leading-none mt-1.5">
