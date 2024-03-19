@@ -23,7 +23,7 @@
     <div class="flex gap-2 flex-row lg:flex-col w-full md:w-[20%] lg:w-[13%] h-fit overflow-x-auto">
         {#each Object.keys(groups) as group}
             <button
-                class="primary w-full px-6 py-3 text-nowrap text-left"
+                class="w-full px-6 py-3 text-nowrap text-left hover:bg-secondary transition-colors"
                 on:click={() => {
                     currentGroup = group;
                 }}>{group}</button
