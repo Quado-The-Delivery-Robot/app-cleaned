@@ -218,8 +218,8 @@
         @apply bg-white bg-opacity-40 rounded-full;
     }
 
-    * {
-        @apply font-poppins text-primary;
+    body {
+        @apply w-full h-screen text-center overflow-hidden font-primary text-primary;
     }
 
     h1,
@@ -242,9 +242,19 @@
         @apply outline-none;
     }
 
-    /* Removes splidejs slider */
+    .pageViewport {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: auto;
+        @apply bg-background;
+    }
+
+    .pageViewport::-webkit-scrollbar {
+        @apply !hidden;
+    }
+
     .splide__pagination {
-        display: none !important;
+        @apply !hidden;
     }
 }
 

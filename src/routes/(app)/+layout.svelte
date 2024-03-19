@@ -1,5 +1,4 @@
 <script lang="ts">
-    import Background from "$lib/protected/background.svelte";
     import Header from "$lib/protected/header.svelte";
     import ActionBar from "$lib/protected/actionBar.svelte";
     import { Svrollbar } from "svrollbar";
@@ -12,7 +11,6 @@
     let viewportContainer: HTMLDivElement;
     let contentContainer: HTMLElement;
     let isMounted: boolean = false;
-    let updateBackgroundPosition: () => never;
 
     function updateViewport() {
         if (!isMounted) return;
@@ -55,7 +53,7 @@
     <div class="w-screen flex flex-col flex-1 h-full relative">
         <Header bind:header />
 
-        <div class="pageViewport w-screen h-full overflow-x-hidden lg:w-full lg:flex-1 flex" bind:this={viewportContainer} on:scroll={updateBackgroundPosition}>
+        <div class="pageViewport w-screen h-full overflow-x-hidden lg:w-full lg:flex-1 flex" bind:this={viewportContainer}>
             <main class="w-screen px-7 pb-6 h-fit lg:pb-0 lg:px-12 lg:w-full" bind:this={contentContainer}>
                 <slot />
             </main>
@@ -66,5 +64,3 @@
 
     <ActionBar bind:actionBar />
 </div>
-
-<Background {viewportContainer} bind:updatePosition={updateBackgroundPosition} />
