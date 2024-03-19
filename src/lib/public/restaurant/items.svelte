@@ -19,7 +19,7 @@
     });
 </script>
 
-<div class="w-full flex flex-col lg:flex-row gap-4">
+<div class="w-full flex flex-col items-start justify-start lg:flex-row gap-4">
     <div class="flex gap-2 flex-row lg:flex-col w-full md:min-w-fit md:w-[20%] lg:w-[13%] h-fit overflow-x-auto">
         {#each Object.keys(groups) as group}
             <button
@@ -39,12 +39,12 @@
                         <div class="flex flex-col justify-start items-start flex-grow text-left px-4 py-4">
                             <p class="text-lg font-semibold leading-none">{item.name}</p>
 
-                            <p class="flex gap-2 text-sm leading-none">
+                            <p class="flex gap-2 text-sm leading-none mt-1.5">
                                 <span>${item.price}</span>
                                 <span>{item.calories} calories</span>
                             </p>
 
-                            <p class="mt-2">{item.description}</p>
+                            <p class="mt-3">{item.description}</p>
                         </div>
 
                         <img class="w-36 aspect-square" src={item.image} alt={item.name} />
