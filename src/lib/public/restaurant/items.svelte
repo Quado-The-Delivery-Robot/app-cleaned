@@ -23,7 +23,7 @@
     <div class="flex gap-2 flex-row lg:flex-col w-full md:w-[20%] lg:w-[13%] h-fit overflow-x-auto">
         {#each Object.keys(groups) as group}
             <button
-                class="w-full px-6 py-3 text-nowrap text-left hover:bg-secondary transition-colors"
+                class="w-full px-6 py-3 text-nowrap text-left hover:bg-secondary transition-colors rounded-lg"
                 on:click={() => {
                     currentGroup = group;
                 }}>{group}</button
@@ -37,12 +37,12 @@
                 <div class="primary w-full overflow-hidden rounded-lg">
                     <div class="w-full flex justify-start items-center gap-2 overflow-hidden pr-4">
                         <div class="flex flex-col justify-start items-start flex-grow text-left px-4 py-4">
-                            <p class="text-lg font-semibold">{item.name}</p>
+                            <p class="text-lg font-semibold leading-none">{item.name}</p>
 
-                            <div class="flex gap-2 text-sm">
-                                <p>${item.price}</p>
-                                <p>{item.calories} calories</p>
-                            </div>
+                            <p class="flex gap-2 text-sm leading-none">
+                                <span>${item.price}</span>
+                                <span>{item.calories} calories</span>
+                            </p>
 
                             <p class="mt-2">{item.description}</p>
                         </div>
