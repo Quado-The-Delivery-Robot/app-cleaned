@@ -23,7 +23,7 @@
     <div class="flex gap-2 flex-row lg:flex-col w-full md:min-w-[20%] lg:min-w-[13%] h-fit overflow-x-auto">
         {#each Object.keys(groups) as group}
             <button
-                class="glass w-full px-6 py-3 text-nowrap text-left"
+                class="primary w-full px-6 py-3 text-nowrap text-left"
                 on:click={() => {
                     currentGroup = group;
                 }}>{group}</button
@@ -34,7 +34,7 @@
     <div class="flex-grow grid grid-cols-2 auto-rows-max gap-3">
         {#each items as item}
             {#if item.type === currentGroup || currentGroup === "All"}
-                <div class="onlyGlass w-full overflow-hidden rounded-lg">
+                <div class="primary w-full overflow-hidden rounded-lg">
                     <div class="w-full flex justify-start items-center gap-2 overflow-hidden pr-4">
                         <div class="flex flex-col justify-start items-start flex-grow text-left px-4 py-4">
                             <p class="text-lg font-semibold">{item.name}</p>

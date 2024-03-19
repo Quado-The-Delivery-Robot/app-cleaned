@@ -35,7 +35,7 @@
     {#if hasHeader}
         <div class="flex justify-between items-center mb-1">
             <p class="text-lg font-semibold">{name}</p>
-            <a href="/{name.toLowerCase()}/all" class="flex items-center text-sm opacity-50 font-light">See all </a>
+            <a href="/{name.toLowerCase()}/all" class="flex items-center text-sm opacity-50 font-light">See all</a>
         </div>
     {/if}
 
