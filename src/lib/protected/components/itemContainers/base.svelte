@@ -26,7 +26,7 @@
 </script>
 
 <SplideSlide>
-    <button class="w-fit h-fit snap-start shrink-0 [&>.onlyGlass]:rounded-lg [&>.onlyGlass]:border [&>.onlyGlass]:!bg-opacity-60 [&>.onlyGlass]:!p-2" on:click={click}>
+    <button class="w-fit h-fit snap-start shrink-0 [&>.primary]:rounded-lg [&>.primary]:border [&>.primary]:!bg-opacity-60 [&>.primary]:!p-2" on:click={click}>
         <slot />
     </button>
 </SplideSlide>

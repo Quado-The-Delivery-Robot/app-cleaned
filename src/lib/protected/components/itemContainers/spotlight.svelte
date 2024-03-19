@@ -20,7 +20,7 @@
 </script>
 
 <Base {data} bind:backgroundColor bind:borderColor>
-    <div class="gap-2 aspect-square w-60 onlyGlass relative text-center font-semibold flex flex-col justify-center items-center overflow-hidden" style="background-color: rgba({hexToRgb(backgroundColor)}, var(--tw-bg-opacity)); border-color: {borderColor};">
+    <div class="primary gap-2 aspect-square w-60 relative text-center font-semibold flex flex-col justify-center items-center overflow-hidden" style="background-color: rgba({hexToRgb(backgroundColor)}, var(--tw-bg-opacity)); border-color: {borderColor};">
         <div class="w-full h-2/3 flex justify-center items-center">
             <img class="h-full aspect-square" src={data.image} alt={data.name} />
         </div>
