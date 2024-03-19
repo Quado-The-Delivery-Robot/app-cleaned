@@ -35,7 +35,7 @@
         {#each items as item}
             {#if item.type === currentGroup || currentGroup === "All"}
                 <div class="primary w-full overflow-hidden rounded-lg">
-                    <div class="w-full flex justify-start items-center gap-2 overflow-hidden pr-6">
+                    <div class="w-full flex justify-start items-center gap-2 overflow-hidden pr-6 h-full">
                         <div class="flex flex-col justify-start items-start flex-grow text-left px-6 py-6 h-full">
                             <p class="text-lg font-semibold leading-none">{item.name}</p>
 
@@ -44,7 +44,7 @@
                                 <span>{item.calories} calories</span>
                             </p>
 
-                            <p class="mt-3">{item.description}</p>
+                            <p class="mt-3 overflow-hidden line-clamp-3 overflow-ellipsis">{item.description}</p>
                         </div>
 
                         <img class="w-36 aspect-square" src={item.image} alt={item.name} />
