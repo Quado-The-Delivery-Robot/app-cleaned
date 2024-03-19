@@ -262,6 +262,6 @@
     button.primary,
     a.primary,
     input.primary {
-        @apply bg-button border-button-950 border px-5 py-2.5;
+        @apply bg-brand-600 border-brand-950 border px-5 py-2.5 text-black rounded-lg;
     }
 }
