@@ -259,35 +259,9 @@
 }
 
 @layer components {
-    .onlyGlass {
-        @apply bg-primary bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-40 border-primary-800;
-    }
-
-    .onlyGlassSecondary {
-        @apply onlyGlass bg-secondary-950 bg-opacity-70;
-    }
-
-    .glass {
-        @apply onlyGlass rounded-lg border;
-    }
-
-    button.glass,
-    input.glass,
-    a.glass {
-        @apply px-5 py-2.5;
-    }
-
-    button.glass,
-    a.glass {
-        @apply transition-all duration-300;
-    }
-
-    button.glass:hover,
-    a.glass:hover {
-        @apply -translate-y-1;
-    }
-
-    input.glass {
-        @apply rounded-full;
+    button.primary,
+    a.primary,
+    input.primary {
+        @apply bg-button border-button-950 border px-5 py-2.5;
     }
 }
