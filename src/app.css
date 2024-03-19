@@ -265,7 +265,8 @@
         @apply bg-brand-600 border-brand-950 border px-5 py-2.5 text-black rounded-lg;
     }
 
-    div.primary {
+    div.primary,
+    header.primary {
         @apply bg-secondary border border-secondary-300 rounded-lg;
     }
 }
