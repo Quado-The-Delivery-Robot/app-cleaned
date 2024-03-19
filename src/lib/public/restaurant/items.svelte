@@ -20,7 +20,7 @@
 </script>
 
 <div class="w-full flex flex-col lg:flex-row gap-4">
-    <div class="flex gap-2 flex-row lg:flex-col md:w-[20%] lg:w-[13%] h-fit">
+    <div class="flex gap-2 flex-row lg:flex-col w-full md:w-[20%] lg:w-[13%] h-fit overflow-x-scroll">
         {#each Object.entries(groups) as [group, items]}
             <button
                 class="glass w-full px-6 py-3 text-nowrap text-left"
@@ -49,7 +49,7 @@
                             <p class="mt-2">{item.description}</p>
                         </div>
 
-                        <img class="w-28 aspect-square" src={item.image} alt={item.name} />
+                        <img class="w-36 aspect-square" src={item.image} alt={item.name} />
                     </div>
                 </div>
             {/if}
