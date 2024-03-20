@@ -23,7 +23,7 @@
     <div class="flex gap-2 flex-row lg:flex-col w-full md:min-w-[188px] md:w-[188px] h-fit overflow-x-auto">
         {#each Object.keys(groups) as group}
             <button
-                class="w-full px-3 py-3 text-nowrap text-left hover:bg-secondary border-opacity-0 hover:border-opacity-100 border border-secondary-300 transition-all rounded-lg"
+                class="w-fit md:w-full px-3 py-3 text-nowrap text-left hover:bg-secondary border-opacity-0 hover:border-opacity-100 border border-secondary-300 transition-all rounded-lg"
                 on:click={() => {
                     currentGroup = group;
                 }}>{group}</button
@@ -31,7 +31,7 @@
         {/each}
     </div>
 
-    <div class="flex-grow grid grid-cols-2 auto-rows-max gap-3">
+    <div class="flex-grow grid grid-cols-1 md:grid-cols-2 auto-rows-max gap-3">
         {#each items as item}
             {#if item.type === currentGroup || currentGroup === "All"}
                 <div class="primary w-full overflow-hidden rounded-lg">
