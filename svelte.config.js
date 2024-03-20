@@ -6,6 +6,7 @@ const config = {
     preprocess: vitePreprocess(),
 
     kit: {
+        version: 0.1,
         adapter: adapter(),
         csrf: {
             checkOrigin: false,
