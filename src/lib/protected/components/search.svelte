@@ -36,7 +36,7 @@
         <input class="bg-transparent w-full" placeholder={`Try searching "${tags[Math.floor(Math.random() * tags.length)]}"`} bind:this={searchInput} on:keypress={inputKeyPress} />
     </div>
 
-    <div class="rounded-full overflow-hidden">
+    <div class="rounded-lg overflow-hidden">
         <Splide
             options={{
                 gap: "0.75rem",
