@@ -264,7 +264,7 @@
     input.primary,
     div.primary,
     header.primary {
-        @apply bg-secondary border border-secondary rounded-lg;
+        @apply bg-secondary border border-secondary-300 rounded-lg;
     }
 
     button.primary,
