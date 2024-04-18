@@ -4,7 +4,6 @@
     import { Svrollbar } from "svrollbar";
     import { onMount } from "svelte";
     import { navigating, page } from "$app/stores";
-    import { background } from "$lib/stores/app";
 
     let header: HTMLElement;
     let actionBar: HTMLElement;
@@ -23,19 +22,7 @@
         viewportContainer.scrollTop = 0;
     }
 
-    function resetBackground() {
-        if ($page.url.pathname.includes("restaurant/")) return;
-        console.log($page.url.pathname);
-        background.set({
-            from: "#1E1E21",
-            to: "#000000",
-        });
-    }
-
-    $: if ($navigating === null) {
-        updateViewport();
-        resetBackground();
-    }
+    $: if ($navigating === null) updateViewport();
 
     onMount(() => {
         isMounted = true;
